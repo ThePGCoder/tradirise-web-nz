@@ -1,0 +1,18 @@
+export const googleRegionMap: { [key: string]: string } = {
+  "Auckland Region": "Auckland",
+  "Wellington Region": "Wellington",
+  "Canterbury Region": "Canterbury",
+  "Bay of Plenty Region": "Bay of Plenty",
+  "Waikato Region": "Waikato",
+  "Otago Region": "Otago",
+  "Manawatū-Whanganui Region": "Manawatū-Whanganui",
+  "Hawke's Bay Region": "Hawke's Bay",
+  "Taranaki Region": "Taranaki",
+  "Northland Region": "Northland",
+  "Gisborne Region": "Gisborne",
+  "Nelson Region": "Nelson",
+  "Marlborough Region": "Marlborough",
+  "Tasman Region": "Tasman",
+  "Southland Region": "Southland",
+  "West Coast Region": "West Coast",
+};

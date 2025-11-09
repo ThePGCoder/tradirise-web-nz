@@ -1,0 +1,60 @@
+/* app/globals.css - Simple fix for .pac-container */
+/*.pac-container {
+  position: absolute !important;
+  z-index: 9999 !important;
+  border-radius: 4px !important;
+  border: 1px solid #ccc !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  background: white !important;
+
+  font-family: inherit !important;
+}
+
+.pac-item {
+  padding: 10px 12px !important;
+  border-bottom: 1px solid #eee !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+}
+
+.pac-item:hover {
+  background-color: #f5f5f5 !important;
+}
+
+.pac-item-selected {
+  background-color: #e3f2fd !important;
+}
+
+.pac-matched {
+  font-weight: 600 !important;
+  color: #1976d2 !important;
+}*/
+
+/* Fix the scrollbar issue */
+/*body:has(.pac-container) {
+  overflow-x: hidden !important;
+}*/
+
+/* Alternative approach - hide pac-container scrollbars */
+/*.pac-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.pac-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.pac-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.pac-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}*/
+/* Fix Google Places Autocomplete dropdown positioning */
+/* Fix Google Places Autocomplete dropdown positioning */
+.pac-container {
+  z-index: 99999 !important;
+}
