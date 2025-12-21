@@ -193,6 +193,12 @@ const NotificationsClient = ({
         return "mdi:folder-open";
       case "business_inquiry":
         return "mdi:store";
+      case "vehicle_inquiry":
+        return "mdi:car";
+      case "plant_inquiry":
+        return "mdi:excavator";
+      case "material_inquiry":
+        return "mdi:package-variant";
       default:
         return "mdi:bell";
     }
@@ -210,6 +216,12 @@ const NotificationsClient = ({
         return theme.palette.warning.main;
       case "business_inquiry":
         return theme.palette.secondary.main;
+      case "vehicle_inquiry":
+        return theme.palette.info.main;
+      case "plant_inquiry":
+        return theme.palette.warning.main;
+      case "material_inquiry":
+        return theme.palette.success.main;
       default:
         return theme.palette.text.secondary;
     }

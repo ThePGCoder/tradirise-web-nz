@@ -38,6 +38,11 @@ export const publicNavData: NavProps[] = [
         icon: "ic:baseline-business",
         link: "/listings/businesses",
       },
+      {
+        title: "Marketplace",
+        icon: "mdi:cart",
+        link: "/listings/marketplace",
+      },
     ],
   },
   {
@@ -93,6 +98,11 @@ export const protectedNavData: NavProps[] = [
         title: "Businesses",
         icon: "ic:baseline-business",
         link: "/listings/businesses",
+      },
+      {
+        title: "Marketplace",
+        icon: "mdi:cart",
+        link: "/listings/marketplace",
       },
     ],
   },

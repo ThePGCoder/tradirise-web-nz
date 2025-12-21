@@ -10,7 +10,14 @@ import {
   Snackbar,
   Alert,
   Pagination,
+  ToggleButtonGroup,
+  ToggleButton,
+  Avatar,
+  Chip,
+  IconButton,
 } from "@mui/material";
+import { Icon } from "@iconify/react";
+import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
 
 import Flex from "@/global/Flex";
 import dayjs from "dayjs";
@@ -19,6 +26,7 @@ import isSameOrBefore from "dayjs/plugin/isSameOrBefore";
 import { ActiveRouteContext } from "@/providers/ActiveRouteProvider";
 
 import ProjectsCard from "./components/ProjectsCard";
+import ProjectsCardCompact from "./components/ProjectsCardCompact";
 import ProjectFilters, { FilterState } from "./components/ProjectFilters";
 
 import { Project } from "@/types/projects";
@@ -37,6 +45,8 @@ interface ProjectsClientProps {
   totalCount: number;
 }
 
+type ViewMode = "grid" | "compact" | "table";
+
 const ProjectsClient: React.FC<ProjectsClientProps> = ({
   initialProjects,
   currentPage,
@@ -48,6 +58,13 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
   const searchParams = useSearchParams();
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<ViewMode>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("projectsViewMode");
+      return (saved as ViewMode) || "grid";
+    }
+    return "grid";
+  });
 
   const [filters, setFilters] = useState<FilterState>({
     trade: "",
@@ -194,33 +211,6 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
     router.push(`/listings/projects/${projectId}`);
   };
 
-  /*const handleQuickApply = async (projectId: string) => {
-    try {
-      const response = await fetch("/api/ad-responses", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ad_id: projectId, ad_type: "project" }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to submit application");
-      }
-
-      setSuccess(
-        "Application submitted successfully! The employer will contact you if you're selected."
-      );
-
-      window.location.reload();
-    } catch (err) {
-      const errorMessage =
-        err instanceof Error ? err.message : "Failed to submit application";
-      console.error("Error applying for project:", err);
-      setError(errorMessage);
-    }
-  };*/
-
   const handleSave = (projectId: string) => {
     console.log(`Saving project ID: ${projectId}`);
     setSuccess("Project saved to your favorites!");
@@ -256,6 +246,16 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleViewModeChange = (
+    _event: React.MouseEvent<HTMLElement>,
+    newMode: ViewMode | null
+  ) => {
+    if (newMode !== null) {
+      setViewMode(newMode);
+      localStorage.setItem("projectsViewMode", newMode);
+    }
+  };
+
   const hasActiveFilters =
     filters.trade ||
     filters.region ||
@@ -264,6 +264,136 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
     filters.projectType ||
     filters.minPrice ||
     filters.maxPrice;
+
+  // DataGrid columns
+  const columns: GridColDef[] = [
+    {
+      field: "logo",
+      headerName: "",
+      width: 80,
+      sortable: false,
+      renderCell: (params: GridRenderCellParams) => {
+        // Check if it's a business listing or personal listing
+        const isBusinessListing = params.row.is_business_listing;
+        const logoUrl = isBusinessListing
+          ? params.row.businesses?.logo_url || params.row.company_logo_url
+          : params.row.profiles?.avatar_url;
+        const fallbackInitial = isBusinessListing
+          ? params.row.businesses?.business_name?.[0] ||
+            params.row.company_name?.[0] ||
+            "B"
+          : params.row.profiles?.first_name?.[0] || "P";
+
+        return (
+          <Box display="flex" alignItems="center" height="100%">
+            <Avatar
+              src={logoUrl || undefined}
+              variant={isBusinessListing ? "rounded" : "circular"}
+              sx={{ width: 35, height: 35 }}
+            >
+              {fallbackInitial}
+            </Avatar>
+          </Box>
+        );
+      },
+    },
+    {
+      field: "title",
+      headerName: "Project",
+      flex: 1,
+      minWidth: 200,
+    },
+    {
+      field: "project_type",
+      headerName: "Type",
+      width: 130,
+    },
+    {
+      field: "price_range",
+      headerName: "Budget",
+      width: 150,
+      renderCell: (params: GridRenderCellParams) => (
+        <Box display="flex" alignItems="center" height="100%">
+          <Typography variant="body2" fontWeight={600} color="primary">
+            {params.row.price_range}
+          </Typography>
+        </Box>
+      ),
+    },
+    {
+      field: "region",
+      headerName: "Location",
+      width: 130,
+    },
+    {
+      field: "required_trades",
+      headerName: "Trades Needed",
+      width: 140,
+      renderCell: (params: GridRenderCellParams) => (
+        <Chip
+          label={params.row.required_trades?.length || 0}
+          size="small"
+          variant="outlined"
+          sx={{ fontSize: "0.75rem" }}
+        />
+      ),
+    },
+    {
+      field: "proposed_start_date",
+      headerName: "Start Date",
+      width: 130,
+      renderCell: (params: GridRenderCellParams) => (
+        <Box display="flex" alignItems="center" height="100%">
+          <Typography variant="body2">
+            {dayjs(params.row.proposed_start_date).format("MMM D, YYYY")}
+          </Typography>
+        </Box>
+      ),
+    },
+    {
+      field: "posted_date",
+      headerName: "Posted",
+      width: 120,
+      renderCell: (params: GridRenderCellParams) => {
+        const postedDate = dayjs(params.row.posted_date);
+        const today = dayjs();
+        const diff = today.diff(postedDate, "day");
+
+        let dateText = "";
+        if (diff === 0) dateText = "Today";
+        else if (diff === 1) dateText = "Yesterday";
+        else if (diff < 7) dateText = `${diff}d ago`;
+        else if (diff < 30) dateText = `${Math.floor(diff / 7)}w ago`;
+        else dateText = `${Math.floor(diff / 30)}mo ago`;
+
+        return (
+          <Typography variant="caption" color="text.secondary">
+            {dateText}
+          </Typography>
+        );
+      },
+    },
+    {
+      field: "actions",
+      headerName: "Actions",
+      width: 100,
+      sortable: false,
+      renderCell: (params: GridRenderCellParams) => (
+        <Box>
+          <IconButton
+            size="small"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleViewDetails(params.row.id);
+            }}
+            title="View Details"
+          >
+            <Icon icon="mdi:eye" width={20} />
+          </IconButton>
+        </Box>
+      ),
+    },
+  ];
 
   return (
     <>
@@ -282,6 +412,7 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
           onClearFilters={clearAllFilters}
         />
 
+        {/* Results Summary with View Mode Toggle */}
         <Flex justifyContent="space-between" alignItems="center" mb={2} px={2}>
           <Typography
             sx={(theme) => ({
@@ -299,50 +430,118 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
             Showing {filteredProjects.length} of {totalCount} projects
             {hasActiveFilters && " (filtered)"}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Page {currentPage} of {totalPages}
-          </Typography>
+
+          <Flex alignItems="center" gap={2}>
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{ display: { xs: "none", sm: "block" } }}
+            >
+              Page {currentPage} of {totalPages}
+            </Typography>
+
+            {/* View Mode Toggle */}
+            <ToggleButtonGroup
+              value={viewMode}
+              exclusive
+              onChange={handleViewModeChange}
+              size="small"
+              aria-label="view mode"
+              sx={{ pt: 1 }}
+            >
+              <ToggleButton value="grid" aria-label="grid view">
+                <Icon icon="mdi:view-grid" width={20} />
+              </ToggleButton>
+              <ToggleButton value="compact" aria-label="compact view">
+                <Icon icon="mdi:view-module" width={20} />
+              </ToggleButton>
+              <ToggleButton value="table" aria-label="table view">
+                <Icon icon="mdi:table" width={20} />
+              </ToggleButton>
+            </ToggleButtonGroup>
+          </Flex>
         </Flex>
 
-        <Grid container columnSpacing={3} rowGap={3}>
-          {filteredProjects.length > 0 ? (
-            filteredProjects.map((project) => (
-              <Grid
-                key={project.id}
-                size={{ xs: 12, sm: 12, md: 12, lg: 6, xl: 4 }}
-              >
-                <ProjectsCard
-                  project={project}
-                  onViewDetails={handleViewDetails}
-                  onSave={handleSave}
+        {/* Table View */}
+        {viewMode === "table" ? (
+          <Box sx={{ height: 600, width: "100%" }}>
+            <DataGrid
+              rows={filteredProjects}
+              columns={columns}
+              pageSizeOptions={[10, 25, 50, 100]}
+              initialState={{
+                pagination: {
+                  paginationModel: { pageSize: 25, page: 0 },
+                },
+              }}
+              disableRowSelectionOnClick
+              onRowClick={(params) => handleViewDetails(params.row.id)}
+              sx={{
+                "& .MuiDataGrid-row": {
+                  cursor: "pointer",
+                },
+                "& .MuiDataGrid-cell:focus": {
+                  outline: "none",
+                },
+                "& .MuiDataGrid-row:hover": {
+                  backgroundColor: "action.hover",
+                },
+              }}
+            />
+          </Box>
+        ) : (
+          /* Grid/Compact View */
+          <Grid container columnSpacing={3} rowGap={3}>
+            {filteredProjects.length > 0 ? (
+              filteredProjects.map((project) => (
+                <Grid
+                  key={project.id}
+                  size={
+                    viewMode === "compact"
+                      ? { xs: 12, sm: 6, md: 4, lg: 3, xl: 2.4 }
+                      : { xs: 12, sm: 12, md: 12, lg: 6, xl: 4 }
+                  }
+                >
+                  {viewMode === "compact" ? (
+                    <ProjectsCardCompact
+                      project={project}
+                      onViewDetails={handleViewDetails}
+                    />
+                  ) : (
+                    <ProjectsCard
+                      project={project}
+                      onViewDetails={handleViewDetails}
+                      onSave={handleSave}
+                    />
+                  )}
+                </Grid>
+              ))
+            ) : (
+              <Grid key="no-projects" size={12}>
+                <EmptyResult
+                  icon="mingcute:house-fill"
+                  description="Add a project to see it here."
+                  title={
+                    hasActiveFilters
+                      ? "No projects match your filters"
+                      : "No projects available at the moment"
+                  }
+                  showButton={true}
+                  buttonText={
+                    hasActiveFilters ? "Clear All Filters" : "Add A Project"
+                  }
+                  onButtonClick={() => {
+                    clearAllFilters();
+                    router.push("/listings/projects/add-project");
+                  }}
+                  height="calc(100vh * 0.5)"
                 />
               </Grid>
-            ))
-          ) : (
-            <Grid key="no-projects" size={12}>
-              <EmptyResult
-                icon="mingcute:house-fill"
-                description="Add a project to see it here."
-                title={
-                  hasActiveFilters
-                    ? "No projects match your filters"
-                    : "No projects available at the moment"
-                }
-                showButton={true}
-                buttonText={
-                  hasActiveFilters ? "Clear All Filters" : "Add A Project"
-                }
-                onButtonClick={() => {
-                  clearAllFilters();
-                  router.push("/listings/projects/add-project");
-                }}
-                height="calc(100vh * 0.5)"
-              />
-            </Grid>
-          )}
-        </Grid>
+            )}
+          </Grid>
+        )}
 
-        {totalPages > 1 && (
+        {totalPages > 1 && viewMode !== "table" && (
           <Flex justifyContent="center" mt={4} mb={2}>
             <Pagination
               count={totalPages}

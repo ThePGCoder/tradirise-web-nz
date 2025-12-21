@@ -132,25 +132,21 @@ const Logo: React.FC<LogoProps> = ({
           overflow: "visible",
         }}
       >
-        <Box color={mode === "light" ? "black" : "white"}>TRADi</Box>
-        <Box color={mode === "light" ? orange[800] : orange[300]}>RiSE</Box>
+        <Box color={mode === "light" ? "black" : "white"}>TRADI</Box>
+        <Box color={mode === "light" ? orange[800] : orange[300]}>RISE</Box>
         <Box
           sx={{
             fontSize: fontSize,
-            lineHeight: 1,
             display: "flex",
             alignItems: "center",
-            paddingLeft: 1,
+            marginTop: "-0.1em", // Small negative margin to nudge it up slightly
           }}
           color="primary.main"
         >
           <Icon
             icon="fa7-solid:earth-oceania"
             style={{
-              height: "0.75em",
-              width: "0.75em",
-              display: "block",
-              verticalAlign: "middle",
+              height: "1em",
             }}
           />
         </Box>

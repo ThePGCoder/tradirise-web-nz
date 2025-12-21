@@ -15,13 +15,20 @@ interface UseFavouriteReturn {
 }
 
 /**
- * Hook to manage favourite state for personnel, businesses, positions, and projects
- * @param itemType - Type of item: "personnel", "business", "position", or "project"
+ * Hook to manage favourite state for various item types
+ * @param itemType - Type of item: "personnel", "business", "position", "project", "vehicle", "plant", or "material"
  * @param itemId - ID of the item
  * @param onToggle - Optional callback when favourite is toggled
  */
 export function useFavourite(
-  itemType: "personnel" | "business" | "position" | "project",
+  itemType:
+    | "personnel"
+    | "business"
+    | "position"
+    | "project"
+    | "vehicle"
+    | "plant"
+    | "material",
   itemId: string,
   onToggle?: (isFavourited: boolean) => void
 ): UseFavouriteReturn {

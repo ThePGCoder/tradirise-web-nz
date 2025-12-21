@@ -330,7 +330,7 @@ export default function PricingSectionClient({
                   gutterBottom
                   sx={{ color: "success.main", fontWeight: "bold" }}
                 >
-                  🎉 Pro is FREE until December 31, 2025!
+                  🎉 Pro is FREE until March 31, 2026!
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 2 }}>
                   Start building your business profile today at no cost.

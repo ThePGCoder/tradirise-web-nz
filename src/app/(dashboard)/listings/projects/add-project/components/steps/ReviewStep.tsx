@@ -16,7 +16,8 @@ import {
 import { Icon } from "@iconify/react";
 import Flex from "@/global/Flex";
 import dayjs from "dayjs";
-import { ProjectFormData, budgetTypeOptions } from "../../project-form-types";
+import { ProjectFormData } from "../../project-form-types";
+import { budgetTypeOptions } from "@/lib/data/projectData";
 
 interface Business {
   id: string;

@@ -55,6 +55,7 @@ const inter = Inter({
 const bowlbyOne = Bowlby_One({
   subsets: ["latin"],
   weight: ["400"],
+  display: "swap",
   variable: "--font-bowlby-one",
 });
 

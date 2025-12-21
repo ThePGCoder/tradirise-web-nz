@@ -12,7 +12,7 @@ import {
   CircularProgress,
   Avatar,
   Chip,
-  useMediaQuery,
+  //useMediaQuery,
   useTheme,
   Grid,
 } from "@mui/material";
@@ -81,6 +81,40 @@ interface Project {
   suburb?: string;
 }
 
+interface Vehicle {
+  id: string;
+  title: string;
+  vehicle_type: string;
+  make: string;
+  model: string;
+  year: number;
+  price: number;
+  region: string;
+  images?: string[];
+}
+
+interface Plant {
+  id: string;
+  title: string;
+  equipment_type: string;
+  category: string;
+  sale_price?: number;
+  price_type: string;
+  region: string;
+  images?: string[];
+}
+
+interface Material {
+  id: string;
+  title: string;
+  material_type: string;
+  category: string;
+  price: number;
+  unit: string;
+  region: string;
+  images?: string[];
+}
+
 interface UserProfile {
   id: string;
   username: string;
@@ -105,6 +139,9 @@ interface Favourite {
   businesses?: Business;
   position?: Position;
   project?: Project;
+  vehicle?: Vehicle;
+  plant?: Plant;
+  material?: Material;
   poster_profile?: UserProfile;
   poster_business?: BusinessProfile;
 }
@@ -155,10 +192,17 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
 }) => {
   const { changeActiveRoute } = useContext(ActiveRouteContext);
   const router = useRouter();
-  const theme = useTheme();
+  //const theme = useTheme();
 
   const [activeTab, setActiveTab] = useState<
-    "all" | "personnel" | "business" | "position" | "project"
+    | "all"
+    | "personnel"
+    | "business"
+    | "position"
+    | "project"
+    | "vehicle"
+    | "plant"
+    | "material"
   >("all");
   const [favourites, setFavourites] = useState<Favourite[]>(initialFavourites);
   const [removingIds, setRemovingIds] = useState<Set<string>>(new Set());
@@ -174,9 +218,7 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
   }, [favourites, activeTab]);
 
   const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
-    setActiveTab(
-      newValue as "all" | "personnel" | "business" | "position" | "project"
-    );
+    setActiveTab(newValue as typeof activeTab);
   };
 
   const handleRemoveFavourite = async (
@@ -214,6 +256,9 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
       business: `/listings/businesses/${itemId}`,
       position: `/listings/positions/${itemId}`,
       project: `/listings/projects/${itemId}`,
+      vehicle: `/listings/marketplace/vehicles/${itemId}`,
+      plant: `/listings/marketplace/plant/${itemId}`,
+      material: `/listings/marketplace/material/${itemId}`,
     };
     router.push(routes[itemType as keyof typeof routes]);
   };
@@ -231,6 +276,13 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
   const projectCount = favourites.filter(
     (f) => f.item_type === "project"
   ).length;
+  const vehicleCount = favourites.filter(
+    (f) => f.item_type === "vehicle"
+  ).length;
+  const plantCount = favourites.filter((f) => f.item_type === "plant").length;
+  const materialCount = favourites.filter(
+    (f) => f.item_type === "material"
+  ).length;
 
   const tabs = [
     { label: "All", value: "all", count: favourites.length },
@@ -238,9 +290,12 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
     { label: "Businesses", value: "business", count: businessCount },
     { label: "Positions", value: "position", count: positionCount },
     { label: "Projects", value: "project", count: projectCount },
+    { label: "Vehicles", value: "vehicle", count: vehicleCount },
+    { label: "Plant", value: "plant", count: plantCount },
+    { label: "Materials", value: "material", count: materialCount },
   ];
 
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  //const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   // Helper function to get empty state info based on tab
   const getEmptyStateInfo = () => {
@@ -269,6 +324,24 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
           title: "No saved projects yet",
           description: "Start favouriting projects to view them here",
         };
+      case "vehicle":
+        return {
+          icon: "mdi:car",
+          title: "No saved vehicles yet",
+          description: "Start favouriting vehicles to view them here",
+        };
+      case "plant":
+        return {
+          icon: "mdi:excavator",
+          title: "No saved equipment yet",
+          description: "Start favouriting plant & equipment to view them here",
+        };
+      case "material":
+        return {
+          icon: "mdi:package-variant",
+          title: "No saved materials yet",
+          description: "Start favouriting materials to view them here",
+        };
       default:
         return {
           icon: "mdi:star-outline",
@@ -276,6 +349,15 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
           description: "Start favouriting items to view them here",
         };
     }
+  };
+
+  // Helper to format price
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat("en-NZ", {
+      style: "currency",
+      currency: "NZD",
+      minimumFractionDigits: 0,
+    }).format(price);
   };
 
   return (
@@ -291,9 +373,9 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
           <Tabs
             value={activeTab}
             onChange={handleTabChange}
-            variant={isMobile ? "scrollable" : "fullWidth"}
-            scrollButtons={isMobile ? "auto" : false}
-            sx={{ borderBottom: 1, borderColor: "divider", mb: 3 }}
+            variant="scrollable"
+            scrollButtons="auto"
+            allowScrollButtonsMobile
           >
             {tabs.map((tab) => (
               <Tab
@@ -302,25 +384,25 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
                   <TabLabelWithBadge label={tab.label} count={tab.count} />
                 }
                 value={tab.value}
-                sx={{ textTransform: "none" }}
+                sx={{
+                  textTransform: "none",
+                  minWidth: { xs: 80, sm: 100 },
+                  flex: { xs: "0 0 auto", md: 1 },
+                }}
               />
             ))}
           </Tabs>
-
-          {/* Results count */}
-          {filteredFavourites.length > 0 && (
-            <Typography variant="body2" color="text.secondary" mb={2}>
-              Showing {filteredFavourites.length}{" "}
-              {activeTab === "all"
-                ? "favourite"
-                : activeTab === "personnel"
-                  ? "tradie"
-                  : activeTab}
-              {filteredFavourites.length !== 1 ? "s" : ""}
-            </Typography>
-          )}
         </Box>
       </InnerCustomCard>
+
+      {/* Results count */}
+      {filteredFavourites.length > 0 && (
+        <Typography variant="body2" color="text.secondary" mb={2} mt={1}>
+          Showing {filteredFavourites.length}{" "}
+          {activeTab === "all" ? "favourite" : activeTab}
+          {filteredFavourites.length !== 1 ? "s" : ""}
+        </Typography>
+      )}
 
       {/* Favourites Grid */}
       {filteredFavourites.length > 0 ? (
@@ -338,7 +420,13 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
                   ? favourite.businesses?.business_name || "Business"
                   : favourite.item_type === "position"
                     ? favourite.position?.title || "Position"
-                    : favourite.project?.title || "Project";
+                    : favourite.item_type === "project"
+                      ? favourite.project?.title || "Project"
+                      : favourite.item_type === "vehicle"
+                        ? favourite.vehicle?.title || "Vehicle"
+                        : favourite.item_type === "plant"
+                          ? favourite.plant?.title || "Equipment"
+                          : favourite.material?.title || "Material";
 
             // Determine subtitle
             const subtitle =
@@ -348,15 +436,27 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
                   ? favourite.businesses?.business_type
                   : favourite.item_type === "position"
                     ? favourite.position?.trade
-                    : favourite.project?.project_type;
+                    : favourite.item_type === "project"
+                      ? favourite.project?.project_type
+                      : favourite.item_type === "vehicle"
+                        ? favourite.vehicle?.vehicle_type
+                        : favourite.item_type === "plant"
+                          ? favourite.plant?.equipment_type
+                          : favourite.material?.material_type;
 
-            // Determine avatar/logo
+            // Determine avatar/logo/image
             const avatarUrl =
               favourite.item_type === "personnel"
                 ? favourite.personnel?.avatar_url
                 : favourite.item_type === "business"
                   ? favourite.businesses?.logo_url
-                  : null;
+                  : favourite.item_type === "vehicle"
+                    ? favourite.vehicle?.images?.[0]
+                    : favourite.item_type === "plant"
+                      ? favourite.plant?.images?.[0]
+                      : favourite.item_type === "material"
+                        ? favourite.material?.images?.[0]
+                        : null;
 
             return (
               <Grid
@@ -375,13 +475,25 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
                       display: "flex",
                       flexDirection: "column",
                       height: "100%",
+                      p: 2,
                     }}
                   >
-                    {/* Header with Avatar/Logo */}
-                    <Flex alignItems="center" gap={2} mb={2}>
+                    {/* Header with Avatar/Logo/Image */}
+                    <Flex alignItems="flex-start" gap={2} mb={2}>
                       <Avatar
                         src={avatarUrl || undefined}
-                        sx={{ width: 56, height: 56 }}
+                        sx={{
+                          width: 56,
+                          height: 56,
+                          flexShrink: 0,
+                        }}
+                        variant={
+                          favourite.item_type === "vehicle" ||
+                          favourite.item_type === "plant" ||
+                          favourite.item_type === "material"
+                            ? "rounded"
+                            : "circular"
+                        }
                       >
                         {!avatarUrl &&
                           (favourite.item_type === "personnel"
@@ -390,20 +502,46 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
                               "P"
                             : favourite.item_type === "business"
                               ? favourite.businesses?.business_name?.[0] || "B"
-                              : favourite.item_type === "position"
-                                ? "P"
-                                : "P")}
+                              : favourite.item_type === "vehicle"
+                                ? "V"
+                                : favourite.item_type === "plant"
+                                  ? "P"
+                                  : "M")}
                       </Avatar>
-                      <Box flex={1}>
-                        <Typography variant="h6" mb={0.5}>
+                      <Box flex={1} minWidth={0}>
+                        <Typography
+                          variant="h6"
+                          mb={0.5}
+                          sx={{
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                            display: "-webkit-box",
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: "vertical",
+                            lineHeight: 1.3,
+                            minHeight: "2.6em",
+                          }}
+                        >
                           {title}
                         </Typography>
-                        {subtitle && <Chip label={subtitle} size="small" />}
+                        {subtitle && (
+                          <Chip
+                            label={subtitle}
+                            size="small"
+                            sx={{
+                              maxWidth: "100%",
+                              "& .MuiChip-label": {
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                              },
+                            }}
+                          />
+                        )}
                       </Box>
                     </Flex>
 
-                    {/* Details based on item type */}
-                    <Box mb={2}>
+                    {/* Details based on item type - Fixed height container */}
+                    <Box sx={{ minHeight: 90, mb: 2 }}>
                       {/* Personnel details */}
                       {favourite.item_type === "personnel" &&
                         favourite.personnel && (
@@ -416,6 +554,11 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
                                 <Typography
                                   variant="body2"
                                   color="text.secondary"
+                                  sx={{
+                                    overflow: "hidden",
+                                    textOverflow: "ellipsis",
+                                    whiteSpace: "nowrap",
+                                  }}
                                 >
                                   {favourite.personnel.region}
                                 </Typography>
@@ -436,11 +579,30 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
                                 <Typography
                                   variant="body2"
                                   color="text.secondary"
+                                  sx={{
+                                    overflow: "hidden",
+                                    textOverflow: "ellipsis",
+                                    whiteSpace: "nowrap",
+                                  }}
                                 >
                                   {favourite.businesses.city}
                                   {favourite.businesses.region
                                     ? `, ${favourite.businesses.region}`
                                     : ""}
+                                </Typography>
+                              </Flex>
+                            )}
+                            {favourite.businesses.years_in_trading && (
+                              <Flex alignItems="center" gap={0.5} mb={0.5}>
+                                <Box color="primary.main">
+                                  <Icon icon="mdi:calendar-clock" width={14} />
+                                </Box>
+                                <Typography
+                                  variant="body2"
+                                  color="text.secondary"
+                                >
+                                  {favourite.businesses.years_in_trading} years
+                                  in business
                                 </Typography>
                               </Flex>
                             )}
@@ -458,6 +620,11 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
                               <Typography
                                 variant="body2"
                                 color="text.secondary"
+                                sx={{
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}
                               >
                                 {favourite.position.region}
                               </Typography>
@@ -469,10 +636,31 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
                               <Typography
                                 variant="body2"
                                 color="text.secondary"
+                                sx={{
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}
                               >
                                 {favourite.position.rate}
                               </Typography>
                             </Flex>
+                            {favourite.position.start_date && (
+                              <Flex alignItems="center" gap={0.5} mb={0.5}>
+                                <Box color="primary.main">
+                                  <Icon icon="mdi:calendar-start" width={14} />
+                                </Box>
+                                <Typography
+                                  variant="body2"
+                                  color="text.secondary"
+                                >
+                                  Start:{" "}
+                                  {new Date(
+                                    favourite.position.start_date
+                                  ).toLocaleDateString()}
+                                </Typography>
+                              </Flex>
+                            )}
                           </>
                         )}
 
@@ -487,6 +675,11 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
                               <Typography
                                 variant="body2"
                                 color="text.secondary"
+                                sx={{
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}
                               >
                                 {favourite.project.region}
                               </Typography>
@@ -498,15 +691,187 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
                               <Typography
                                 variant="body2"
                                 color="text.secondary"
+                                sx={{
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}
                               >
                                 {favourite.project.price_range}
+                              </Typography>
+                            </Flex>
+                            {favourite.project.proposed_start_date && (
+                              <Flex alignItems="center" gap={0.5} mb={0.5}>
+                                <Box color="primary.main">
+                                  <Icon icon="mdi:calendar-start" width={14} />
+                                </Box>
+                                <Typography
+                                  variant="body2"
+                                  color="text.secondary"
+                                >
+                                  Start:{" "}
+                                  {new Date(
+                                    favourite.project.proposed_start_date
+                                  ).toLocaleDateString()}
+                                </Typography>
+                              </Flex>
+                            )}
+                          </>
+                        )}
+
+                      {/* Vehicle details */}
+                      {favourite.item_type === "vehicle" &&
+                        favourite.vehicle && (
+                          <>
+                            <Flex alignItems="center" gap={0.5} mb={0.5}>
+                              <Box color="primary.main">
+                                <Icon icon="mdi:map-marker" width={14} />
+                              </Box>
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                sx={{
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}
+                              >
+                                {favourite.vehicle.region}
+                              </Typography>
+                            </Flex>
+                            <Flex alignItems="center" gap={0.5} mb={0.5}>
+                              <Box color="primary.main">
+                                <Icon icon="mdi:currency-usd" width={14} />
+                              </Box>
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                              >
+                                {formatPrice(favourite.vehicle.price)}
+                              </Typography>
+                            </Flex>
+                            <Flex alignItems="center" gap={0.5} mb={0.5}>
+                              <Box color="primary.main">
+                                <Icon icon="mdi:car-info" width={14} />
+                              </Box>
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                sx={{
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}
+                              >
+                                {favourite.vehicle.year}{" "}
+                                {favourite.vehicle.make}{" "}
+                                {favourite.vehicle.model}
+                              </Typography>
+                            </Flex>
+                          </>
+                        )}
+
+                      {/* Plant details */}
+                      {favourite.item_type === "plant" && favourite.plant && (
+                        <>
+                          <Flex alignItems="center" gap={0.5} mb={0.5}>
+                            <Box color="primary.main">
+                              <Icon icon="mdi:map-marker" width={14} />
+                            </Box>
+                            <Typography
+                              variant="body2"
+                              color="text.secondary"
+                              sx={{
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                                whiteSpace: "nowrap",
+                              }}
+                            >
+                              {favourite.plant.region}
+                            </Typography>
+                          </Flex>
+                          <Flex alignItems="center" gap={0.5} mb={0.5}>
+                            <Box color="primary.main">
+                              <Icon icon="mdi:currency-usd" width={14} />
+                            </Box>
+                            <Typography variant="body2" color="text.secondary">
+                              {favourite.plant.sale_price
+                                ? formatPrice(favourite.plant.sale_price)
+                                : "POA"}
+                            </Typography>
+                          </Flex>
+                          <Flex alignItems="center" gap={0.5} mb={0.5}>
+                            <Box color="primary.main">
+                              <Icon icon="mdi:tag" width={14} />
+                            </Box>
+                            <Typography
+                              variant="body2"
+                              color="text.secondary"
+                              sx={{
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                                whiteSpace: "nowrap",
+                              }}
+                            >
+                              {favourite.plant.price_type}
+                            </Typography>
+                          </Flex>
+                        </>
+                      )}
+
+                      {/* Material details */}
+                      {favourite.item_type === "material" &&
+                        favourite.material && (
+                          <>
+                            <Flex alignItems="center" gap={0.5} mb={0.5}>
+                              <Box color="primary.main">
+                                <Icon icon="mdi:map-marker" width={14} />
+                              </Box>
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                sx={{
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}
+                              >
+                                {favourite.material.region}
+                              </Typography>
+                            </Flex>
+                            <Flex alignItems="center" gap={0.5} mb={0.5}>
+                              <Box color="primary.main">
+                                <Icon icon="mdi:currency-usd" width={14} />
+                              </Box>
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                              >
+                                {formatPrice(favourite.material.price)} per{" "}
+                                {favourite.material.unit}
+                              </Typography>
+                            </Flex>
+                            <Flex alignItems="center" gap={0.5} mb={0.5}>
+                              <Box color="primary.main">
+                                <Icon icon="mdi:shape" width={14} />
+                              </Box>
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                sx={{
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}
+                              >
+                                {favourite.material.category}
                               </Typography>
                             </Flex>
                           </>
                         )}
                     </Box>
 
-                    {/* Description preview */}
+                    {/* Description preview (for position and project only) - Fixed height */}
                     {(favourite.position?.description ||
                       favourite.project?.description) && (
                       <Typography
@@ -517,8 +882,10 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
                           overflow: "hidden",
                           textOverflow: "ellipsis",
                           display: "-webkit-box",
-                          WebkitLineClamp: 2,
+                          WebkitLineClamp: 3,
                           WebkitBoxOrient: "vertical",
+                          minHeight: "3.6em",
+                          lineHeight: 1.2,
                         }}
                       >
                         {favourite.position?.description ||
@@ -550,7 +917,16 @@ const MyFavouritesClient: React.FC<MyFavouritesClientProps> = ({
                         <Typography variant="caption" color="text.secondary">
                           Notes:
                         </Typography>
-                        <Typography variant="body2">
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                            display: "-webkit-box",
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: "vertical",
+                          }}
+                        >
                           {favourite.notes}
                         </Typography>
                       </Box>

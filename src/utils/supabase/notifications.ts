@@ -5,7 +5,10 @@ export type NotificationType =
   | "personnel_contact"
   | "position_application"
   | "project_application"
-  | "business_inquiry";
+  | "business_inquiry"
+  | "vehicle_inquiry" // NEW
+  | "plant_inquiry" // NEW
+  | "material_inquiry"; // NEW
 
 interface CreateNotificationParams {
   userId: string;

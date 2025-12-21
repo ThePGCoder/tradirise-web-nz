@@ -42,7 +42,7 @@ const Register: React.FC<RegisterProps> = () => {
               position="relative"
               sx={{
                 width: 400,
-                height: 500,
+                height: "600",
                 flexShrink: 0,
                 borderRadius: "4px",
                 overflow: "hidden",

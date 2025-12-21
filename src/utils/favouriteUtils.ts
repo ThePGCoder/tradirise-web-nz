@@ -1,10 +1,19 @@
 // utils/favouritesUtils.ts
 
+export type FavouriteItemType =
+  | "personnel"
+  | "business"
+  | "position"
+  | "project"
+  | "vehicle"
+  | "plant"
+  | "material";
+
 /**
  * Check if an item is favourited by the current user
  */
 export async function checkIsFavourited(
-  itemType: "personnel" | "business" | "position" | "project",
+  itemType: FavouriteItemType,
   itemId: string
 ): Promise<boolean> {
   try {
@@ -25,7 +34,7 @@ export async function checkIsFavourited(
  * Add an item to favourites
  */
 export async function addToFavourites(
-  itemType: "personnel" | "business" | "position" | "project",
+  itemType: FavouriteItemType,
   itemId: string,
   notes?: string
 ): Promise<{ success: boolean; error?: string }> {
@@ -53,7 +62,7 @@ export async function addToFavourites(
  * Remove an item from favourites
  */
 export async function removeFromFavourites(
-  itemType: "personnel" | "business" | "position" | "project",
+  itemType: FavouriteItemType,
   itemId: string
 ): Promise<{ success: boolean; error?: string }> {
   try {
@@ -79,7 +88,7 @@ export async function removeFromFavourites(
  * Toggle favourite status for an item
  */
 export async function toggleFavourite(
-  itemType: "personnel" | "business" | "position" | "project",
+  itemType: FavouriteItemType,
   itemId: string,
   currentlyFavourited: boolean,
   notes?: string

@@ -40,6 +40,21 @@ const addOptions: AddOption[] = [
     icon: "ic:baseline-business",
     route: "/profiles/business-profiles/add-business",
   },
+  {
+    type: "Vehicle",
+    icon: "mdi:truck-pickup",
+    route: "/listings/marketplace/vehicles/add-vehicle",
+  },
+  {
+    type: "Plant",
+    icon: "mdi:excavator",
+    route: "/listings/marketplace/plant/add-plant",
+  },
+  {
+    type: "Materials",
+    icon: "mdi:package-variant-closed",
+    route: "/listings/marketplace/materials/add-material",
+  },
 ];
 
 const AddButton: React.FC = () => {

@@ -1,0 +1,375 @@
+"filename", "language", "JSON with Comments", "JSON", "TypeScript", "TypeScript JSX", "PostCSS", "JavaScript", "XML", "Markdown", "comment", "blank", "total"
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 23, 0, 14, 37
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\eslint.config.mjs", "JavaScript", 0, 0, 0, 0, 0, 12, 0, 0, 0, 5, 17
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\interfaces.d.ts", "TypeScript", 0, 0, 151, 0, 0, 0, 0, 0, 19, 16, 186
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\middleware.ts", "TypeScript", 0, 0, 10, 0, 0, 0, 0, 0, 8, 3, 21
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\next.config.ts", "TypeScript", 0, 0, 19, 0, 0, 0, 0, 0, 0, 3, 22
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\package-lock.json", "JSON", 0, 13616, 0, 0, 0, 0, 0, 0, 0, 1, 13617
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\package.json", "JSON", 0, 59, 0, 0, 0, 0, 0, 0, 0, 1, 60
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\public\eagle.svg", "XML", 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\public\eagle2.svg", "XML", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\public\file.svg", "XML", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\public\globe.svg", "XML", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\public\next.svg", "XML", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\public\post.svg", "XML", 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 5
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\public\vercel.svg", "XML", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\public\window.svg", "XML", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\callback\route.ts", "TypeScript", 0, 0, 50, 0, 0, 0, 0, 0, 8, 11, 69
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\components\ResponsivePanel.tsx", "TypeScript JSX", 0, 0, 0, 49, 0, 0, 0, 0, 3, 7, 59
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\forgot-password\actions.ts", "TypeScript", 0, 0, 53, 0, 0, 0, 0, 0, 4, 14, 71
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\forgot-password\page.tsx", "TypeScript JSX", 0, 0, 0, 138, 0, 0, 0, 0, 2, 11, 151
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\landing\components\B2BValueSection.tsx", "TypeScript JSX", 0, 0, 0, 175, 0, 0, 0, 0, 1, 9, 185
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\landing\components\LandingFeatures.tsx", "TypeScript JSX", 0, 0, 0, 95, 0, 0, 0, 0, 1, 6, 102
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\landing\components\LandingHero.tsx", "TypeScript JSX", 0, 0, 0, 302, 0, 0, 0, 0, 7, 18, 327
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\landing\components\LandingNavigation.tsx", "TypeScript JSX", 0, 0, 0, 240, 0, 0, 0, 0, 6, 19, 265
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\landing\components\LandingSection.tsx", "TypeScript JSX", 0, 0, 0, 171, 0, 0, 0, 0, 13, 14, 198
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\landing\components\LandingSectionServer.tsx", "TypeScript JSX", 0, 0, 0, 31, 0, 0, 0, 0, 2, 9, 42
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\landing\page.tsx", "TypeScript JSX", 0, 0, 0, 49, 0, 0, 0, 0, 6, 10, 65
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\layout.tsx", "TypeScript JSX", 0, 0, 0, 15, 0, 0, 0, 0, 7, 7, 29
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\layout\Footer.tsx", "TypeScript JSX", 0, 0, 0, 38, 0, 0, 0, 0, 1, 4, 43
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\layout\Header.tsx", "TypeScript JSX", 0, 0, 0, 24, 0, 0, 0, 0, 1, 5, 30
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\login\action.ts", "TypeScript", 0, 0, 27, 0, 0, 0, 0, 0, 3, 8, 38
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\login\components\LoginForm.tsx", "TypeScript JSX", 0, 0, 0, 121, 0, 0, 0, 0, 3, 15, 139
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\login\page.tsx", "TypeScript JSX", 0, 0, 0, 60, 0, 0, 0, 0, 4, 5, 69
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\register\actions.ts", "TypeScript", 0, 0, 122, 0, 0, 0, 0, 0, 8, 25, 155
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\register\components\RegisterForm.tsx", "TypeScript JSX", 0, 0, 0, 490, 0, 0, 0, 0, 16, 48, 554
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\register\page.tsx", "TypeScript JSX", 0, 0, 0, 56, 0, 0, 0, 0, 4, 7, 67
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\select-username\action.ts", "TypeScript", 0, 0, 96, 0, 0, 0, 0, 0, 11, 19, 126
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\select-username\components\SelectUsernameForm.tsx", "TypeScript JSX", 0, 0, 0, 207, 0, 0, 0, 0, 4, 30, 241
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\select-username\page.tsx", "TypeScript JSX", 0, 0, 0, 40, 0, 0, 0, 0, 5, 8, 53
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(auth)\update-password\page.tsx", "TypeScript JSX", 0, 0, 0, 102, 0, 0, 0, 0, 0, 7, 109
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\LayoutClient.tsx", "TypeScript JSX", 0, 0, 0, 41, 0, 0, 0, 0, 2, 9, 52
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\account\components\PaymentCancelModal.tsx", "TypeScript JSX", 0, 0, 0, 97, 0, 0, 0, 0, 0, 8, 105
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\account\components\PaymentSuccessModal.tsx", "TypeScript JSX", 0, 0, 0, 88, 0, 0, 0, 0, 0, 10, 98
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\account\components\PaymentsTab.tsx", "TypeScript JSX", 0, 0, 0, 220, 0, 0, 0, 0, 1, 20, 241
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\account\components\PlansTab.tsx", "TypeScript JSX", 0, 0, 0, 293, 0, 0, 0, 0, 12, 39, 344
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\account\components\SettingsTab.tsx", "TypeScript JSX", 0, 0, 0, 374, 0, 0, 0, 0, 1, 35, 410
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\account\components\UsageTab.tsx", "TypeScript JSX", 0, 0, 0, 315, 0, 0, 0, 0, 1, 29, 345
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\account\page.tsx", "TypeScript JSX", 0, 0, 0, 104, 0, 0, 0, 0, 7, 23, 134
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\home\components\HomePageClient.tsx", "TypeScript JSX", 0, 0, 0, 501, 0, 0, 0, 0, 14, 31, 546
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\home\page.tsx", "TypeScript JSX", 0, 0, 0, 22, 0, 0, 0, 0, 4, 7, 33
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\layout.tsx", "TypeScript JSX", 0, 0, 0, 9, 0, 0, 0, 0, 2, 4, 15
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\layout\Drawer.tsx", "TypeScript JSX", 0, 0, 0, 32, 0, 0, 0, 0, 2, 6, 40
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\layout\Footer.tsx", "TypeScript JSX", 0, 0, 0, 43, 0, 0, 0, 0, 0, 4, 47
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\layout\Header.tsx", "TypeScript JSX", 0, 0, 0, 53, 0, 0, 0, 0, 0, 6, 59
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\layout\NavItem.tsx", "TypeScript JSX", 0, 0, 0, 230, 0, 0, 0, 0, 6, 30, 266
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\layout\NavMenu.tsx", "TypeScript JSX", 0, 0, 0, 20, 0, 0, 0, 0, 0, 4, 24
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\layout\NavMenuClient.tsx", "TypeScript JSX", 0, 0, 0, 21, 0, 0, 0, 0, 1, 8, 30
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\layout\NavMenuServer.tsx", "TypeScript JSX", 0, 0, 0, 12, 0, 0, 0, 0, 0, 5, 17
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\layout\NavMenuWrapper.tsx", "TypeScript JSX", 0, 0, 0, 12, 0, 0, 0, 0, 0, 5, 17
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\layout\Sidebar.tsx", "TypeScript JSX", 0, 0, 0, 33, 0, 0, 0, 0, 2, 5, 40
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\layout\ThemeToggle.tsx", "TypeScript JSX", 0, 0, 0, 19, 0, 0, 0, 0, 0, 3, 22
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\layout\components\AddButton.tsx", "TypeScript JSX", 0, 0, 0, 128, 0, 0, 0, 0, 1, 11, 140
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\businesses\[id]\components\BusinessDetailClient.tsx", "TypeScript JSX", 0, 0, 0, 197, 0, 0, 0, 0, 3, 22, 222
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\businesses\[id]\components\BusinessStandardLayout.tsx", "TypeScript JSX", 0, 0, 0, 814, 0, 0, 0, 0, 13, 43, 870
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\businesses\[id]\components\BusinessTabbedLayout.tsx", "TypeScript JSX", 0, 0, 0, 611, 0, 0, 0, 0, 5, 53, 669
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\businesses\[id]\components\EndorsementsSection.tsx", "TypeScript JSX", 0, 0, 0, 371, 0, 0, 0, 0, 12, 25, 408
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\businesses\[id]\not-found.tsx", "TypeScript JSX", 0, 0, 0, 46, 0, 0, 0, 0, 1, 7, 54
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\businesses\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 52, 0, 0, 0, 0, 7, 12, 71
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\businesses\actions\endorsements.ts", "TypeScript", 0, 0, 370, 0, 0, 0, 0, 0, 26, 65, 461
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\businesses\components\BusinessCard.tsx", "TypeScript JSX", 0, 0, 0, 283, 0, 0, 0, 0, 11, 21, 315
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\businesses\components\BusinessFilters.tsx", "TypeScript JSX", 0, 0, 0, 246, 0, 0, 0, 0, 9, 18, 273
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\businesses\components\BusinessMap.tsx", "TypeScript JSX", 0, 0, 0, 975, 0, 0, 0, 0, 12, 76, 1063
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\businesses\components\BusinessesClient.tsx", "TypeScript JSX", 0, 0, 0, 301, 0, 0, 0, 0, 19, 32, 352
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\businesses\components\ContactBusinessDialog.tsx", "TypeScript JSX", 0, 0, 0, 181, 0, 0, 0, 0, 2, 23, 206
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\businesses\page.tsx", "TypeScript JSX", 0, 0, 0, 38, 0, 0, 0, 0, 13, 11, 62
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\businesses\types\endorsements.ts", "TypeScript", 0, 0, 42, 0, 0, 0, 0, 0, 4, 10, 56
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\components\AddListingDialog.tsx", "TypeScript JSX", 0, 0, 0, 171, 0, 0, 0, 0, 2, 12, 185
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\components\ListingCard.tsx", "TypeScript JSX", 0, 0, 0, 380, 0, 0, 0, 0, 17, 24, 421
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\MarketPlaceClient.tsx", "TypeScript JSX", 0, 0, 0, 106, 0, 0, 0, 0, 1, 11, 118
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\components\MaterialCard.tsx", "TypeScript JSX", 0, 0, 0, 303, 0, 0, 0, 0, 16, 23, 342
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\components\MaterialCardCompact.tsx", "TypeScript JSX", 0, 0, 0, 103, 0, 0, 0, 0, 4, 9, 116
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\components\MaterialFilters.tsx", "TypeScript JSX", 0, 0, 0, 262, 0, 0, 0, 0, 11, 17, 290
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\components\MaterialsTab.tsx", "TypeScript JSX", 0, 0, 0, 322, 0, 0, 0, 0, 10, 29, 361
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\components\PlantCard.tsx", "TypeScript JSX", 0, 0, 0, 299, 0, 0, 0, 0, 16, 23, 338
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\components\PlantCardCompact.tsx", "TypeScript JSX", 0, 0, 0, 106, 0, 0, 0, 0, 1, 9, 116
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\components\PlantFilters.tsx", "TypeScript JSX", 0, 0, 0, 268, 0, 0, 0, 0, 11, 17, 296
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\components\PlantTab.tsx", "TypeScript JSX", 0, 0, 0, 326, 0, 0, 0, 0, 11, 29, 366
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\components\VehicleCard.tsx", "TypeScript JSX", 0, 0, 0, 293, 0, 0, 0, 0, 17, 25, 335
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\components\VehicleCardCompact.tsx", "TypeScript JSX", 0, 0, 0, 106, 0, 0, 0, 0, 1, 9, 116
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\components\VehicleFilters.tsx", "TypeScript JSX", 0, 0, 0, 288, 0, 0, 0, 0, 12, 18, 318
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\components\VehiclesTab.tsx", "TypeScript JSX", 0, 0, 0, 339, 0, 0, 0, 0, 11, 29, 379
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\materials\[id]\MaterialDetailClient.tsx", "TypeScript JSX", 0, 0, 0, 573, 0, 0, 0, 0, 20, 43, 636
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\materials\[id]\not-found.tsx", "TypeScript JSX", 0, 0, 0, 46, 0, 0, 0, 0, 1, 7, 54
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\materials\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 121, 0, 0, 0, 0, 4, 17, 142
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\materials\add-material\AddMaterialClient.tsx", "TypeScript JSX", 0, 0, 0, 266, 0, 0, 0, 0, 1, 17, 284
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\materials\add-material\material-actions.ts", "TypeScript", 0, 0, 275, 0, 0, 0, 0, 0, 7, 51, 333
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\materials\add-material\page.tsx", "TypeScript JSX", 0, 0, 0, 52, 0, 0, 0, 0, 1, 10, 63
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\materials\add-material\steps\MaterialDetailsStep.tsx", "TypeScript JSX", 0, 0, 0, 145, 0, 0, 0, 0, 1, 14, 160
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\materials\add-material\steps\MaterialImagesContactStep.tsx", "TypeScript JSX", 0, 0, 0, 92, 0, 0, 0, 0, 1, 11, 104
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\materials\add-material\steps\MaterialLocationStep.tsx", "TypeScript JSX", 0, 0, 0, 105, 0, 0, 0, 0, 1, 9, 115
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\materials\add-material\steps\MaterialQuantityPricingStep.tsx", "TypeScript JSX", 0, 0, 0, 234, 0, 0, 0, 0, 4, 19, 257
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\materials\add-material\steps\MaterialReviewStep.tsx", "TypeScript JSX", 0, 0, 0, 362, 0, 0, 0, 0, 6, 12, 380
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\materials\material-form-types.ts", "TypeScript", 0, 0, 28, 0, 0, 0, 0, 0, 1, 2, 31
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\page.tsx", "TypeScript JSX", 0, 0, 0, 303, 0, 0, 0, 0, 11, 20, 334
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\plant\[id]\PlantDetailClient.tsx", "TypeScript JSX", 0, 0, 0, 520, 0, 0, 0, 0, 20, 41, 581
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\plant\[id]\not-found.tsx", "TypeScript JSX", 0, 0, 0, 46, 0, 0, 0, 0, 1, 7, 54
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\plant\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 117, 0, 0, 0, 0, 4, 17, 138
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\plant\add-plant\components\AddPlantClient.tsx", "TypeScript JSX", 0, 0, 0, 257, 0, 0, 0, 0, 1, 15, 273
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\plant\add-plant\page.tsx", "TypeScript JSX", 0, 0, 0, 52, 0, 0, 0, 0, 1, 10, 63
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\plant\add-plant\plant-actions.ts", "TypeScript", 0, 0, 213, 0, 0, 0, 0, 0, 7, 38, 258
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\plant\add-plant\plant-form-types.ts", "TypeScript", 0, 0, 23, 0, 0, 0, 0, 0, 1, 2, 26
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\plant\add-plant\steps\PlantDetailStep.tsx", "TypeScript JSX", 0, 0, 0, 176, 0, 0, 0, 0, 1, 16, 193
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\plant\add-plant\steps\PlantFeaturesLocationStep.tsx", "TypeScript JSX", 0, 0, 0, 97, 0, 0, 0, 0, 1, 8, 106
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\plant\add-plant\steps\PlantImagesContactStep.tsx", "TypeScript JSX", 0, 0, 0, 83, 0, 0, 0, 0, 1, 10, 94
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\plant\add-plant\steps\PlantPricingStep.tsx", "TypeScript JSX", 0, 0, 0, 122, 0, 0, 0, 0, 1, 10, 133
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\plant\add-plant\steps\PlantReviewStep.tsx", "TypeScript JSX", 0, 0, 0, 323, 0, 0, 0, 0, 6, 13, 342
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\vehicles\[id]\VehiclesDetailClient.tsx", "TypeScript JSX", 0, 0, 0, 535, 0, 0, 0, 0, 20, 42, 597
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\vehicles\[id]\not-found.tsx", "TypeScript JSX", 0, 0, 0, 46, 0, 0, 0, 0, 1, 7, 54
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\vehicles\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 117, 0, 0, 0, 0, 6, 17, 140
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\vehicles\add-vehicle\components\AddVehicleClient.tsx", "TypeScript JSX", 0, 0, 0, 271, 0, 0, 0, 0, 1, 27, 299
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\vehicles\add-vehicle\components\ImageUploader.tsx", "TypeScript JSX", 0, 0, 0, 270, 0, 0, 0, 0, 11, 29, 310
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\vehicles\add-vehicle\components\steps\ImagesContactStep.tsx", "TypeScript JSX", 0, 0, 0, 86, 0, 0, 0, 0, 1, 11, 98
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\vehicles\add-vehicle\components\steps\PricingLocationStep.tsx", "TypeScript JSX", 0, 0, 0, 128, 0, 0, 0, 0, 1, 9, 138
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\vehicles\add-vehicle\components\steps\SpecificationsStep.tsx", "TypeScript JSX", 0, 0, 0, 163, 0, 0, 0, 0, 1, 10, 174
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\vehicles\add-vehicle\components\steps\VehicleDetailsStep.tsx", "TypeScript JSX", 0, 0, 0, 156, 0, 0, 0, 0, 1, 14, 171
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\vehicles\add-vehicle\components\steps\VehicleReviewStep.tsx", "TypeScript JSX", 0, 0, 0, 347, 0, 0, 0, 0, 6, 13, 366
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\vehicles\add-vehicle\page.tsx", "TypeScript JSX", 0, 0, 0, 62, 0, 0, 0, 0, 2, 12, 76
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\vehicles\add-vehicle\vehicle-actions.ts", "TypeScript", 0, 0, 246, 0, 0, 0, 0, 0, 7, 47, 300
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\marketplace\vehicles\add-vehicle\vehicle-form-types.ts", "TypeScript", 0, 0, 24, 0, 0, 0, 0, 0, 1, 2, 27
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\[id]\components\PersonnelDetailClient.tsx", "TypeScript JSX", 0, 0, 0, 572, 0, 0, 0, 0, 16, 46, 634
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\[id]\not-found.tsx", "TypeScript JSX", 0, 0, 0, 46, 0, 0, 0, 0, 1, 7, 54
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 135, 0, 0, 0, 0, 7, 22, 164
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\add-personnel\components\AddPersonalClient.tsx", "TypeScript JSX", 0, 0, 0, 579, 0, 0, 0, 0, 3, 42, 624
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\add-personnel\components\steps\LocationAvailabilityStep.tsx", "TypeScript JSX", 0, 0, 0, 234, 0, 0, 0, 0, 3, 21, 258
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\add-personnel\components\steps\PersonalInfoStep.tsx", "TypeScript JSX", 0, 0, 0, 99, 0, 0, 0, 0, 1, 12, 112
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\add-personnel\components\steps\ReviewStep.tsx", "TypeScript JSX", 0, 0, 0, 308, 0, 0, 0, 0, 11, 12, 331
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\add-personnel\components\steps\SkillsCredentialsStep.tsx", "TypeScript JSX", 0, 0, 0, 338, 0, 0, 0, 0, 8, 27, 373
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\add-personnel\components\steps\TradeDetailsStep.tsx", "TypeScript JSX", 0, 0, 0, 151, 0, 0, 0, 0, 2, 10, 163
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\add-personnel\page.tsx", "TypeScript JSX", 0, 0, 0, 61, 0, 0, 0, 0, 2, 12, 75
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\add-personnel\personnel-actions.ts", "TypeScript", 0, 0, 269, 0, 0, 0, 0, 0, 16, 55, 340
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\add-personnel\personnel-form-types.ts", "TypeScript", 0, 0, 27, 0, 0, 0, 0, 0, 1, 4, 32
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\components\ContactDialog.tsx", "TypeScript JSX", 0, 0, 0, 181, 0, 0, 0, 0, 2, 23, 206
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\components\PersonnelCard.tsx", "TypeScript JSX", 0, 0, 0, 388, 0, 0, 0, 0, 4, 30, 422
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\components\PersonnelClient.tsx", "TypeScript JSX", 0, 0, 0, 263, 0, 0, 0, 0, 15, 36, 314
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\components\PersonnelFilters.tsx", "TypeScript JSX", 0, 0, 0, 238, 0, 0, 0, 0, 7, 13, 258
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\personnel\page.tsx", "TypeScript JSX", 0, 0, 0, 46, 0, 0, 0, 0, 4, 10, 60
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\positions\PositionsClient.tsx", "TypeScript JSX", 0, 0, 0, 280, 0, 0, 0, 0, 17, 36, 333
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\positions\[id]\components\PositionDetailClient.tsx", "TypeScript JSX", 0, 0, 0, 573, 0, 0, 0, 0, 25, 46, 644
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\positions\[id]\not-found.tsx", "TypeScript JSX", 0, 0, 0, 46, 0, 0, 0, 0, 1, 7, 54
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\positions\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 71, 0, 0, 0, 0, 1, 9, 81
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\positions\add-position\components\AddPositionClient.tsx", "TypeScript JSX", 0, 0, 0, 499, 0, 0, 0, 0, 3, 40, 542
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\positions\add-position\components\steps\BasicDetailsStep.tsx", "TypeScript JSX", 0, 0, 0, 89, 0, 0, 0, 0, 1, 8, 98
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\positions\add-position\components\steps\LocationRateStep.tsx", "TypeScript JSX", 0, 0, 0, 331, 0, 0, 0, 0, 5, 28, 364
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\positions\add-position\components\steps\RequirementsBenefitsStep.tsx", "TypeScript JSX", 0, 0, 0, 244, 0, 0, 0, 0, 6, 16, 266
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\positions\add-position\components\steps\ReviewStep.tsx", "TypeScript JSX", 0, 0, 0, 361, 0, 0, 0, 0, 7, 16, 384
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\positions\add-position\page.tsx", "TypeScript JSX", 0, 0, 0, 84, 0, 0, 0, 0, 3, 17, 104
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\positions\add-position\position-actions.ts", "TypeScript", 0, 0, 245, 0, 0, 0, 0, 0, 11, 50, 306
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\positions\add-position\position-form-types.ts", "TypeScript", 0, 0, 21, 0, 0, 0, 0, 0, 1, 2, 24
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\positions\components\ContactPositionDialog.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\positions\components\PositionFilters.tsx", "TypeScript JSX", 0, 0, 0, 233, 0, 0, 0, 0, 8, 15, 256
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\positions\components\PositionsCard.tsx", "TypeScript JSX", 0, 0, 0, 383, 0, 0, 0, 0, 14, 32, 429
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\positions\page.tsx", "TypeScript JSX", 0, 0, 0, 60, 0, 0, 0, 0, 4, 11, 75
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\projects\ProjectsClient.tsx", "TypeScript JSX", 0, 0, 0, 314, 0, 0, 0, 0, 27, 42, 383
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\projects\[id]\components\ProjectDetailClient.tsx", "TypeScript JSX", 0, 0, 0, 588, 0, 0, 0, 0, 16, 46, 650
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\projects\[id]\not-found.tsx", "TypeScript JSX", 0, 0, 0, 44, 0, 0, 0, 0, 1, 6, 51
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\projects\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 136, 0, 0, 0, 0, 4, 16, 156
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\projects\add-project\components\AddProjectClient.tsx", "TypeScript JSX", 0, 0, 0, 515, 0, 0, 0, 0, 3, 38, 556
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\projects\add-project\components\steps\BudgetTimelineStep.tsx", "TypeScript JSX", 0, 0, 0, 250, 0, 0, 0, 0, 2, 13, 265
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\projects\add-project\components\steps\ContactDetailsStep.tsx", "TypeScript JSX", 0, 0, 0, 74, 0, 0, 0, 0, 1, 9, 84
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\projects\add-project\components\steps\ProjectOverviewStep.tsx", "TypeScript JSX", 0, 0, 0, 269, 0, 0, 0, 0, 3, 21, 293
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\projects\add-project\components\steps\ReviewStep.tsx", "TypeScript JSX", 0, 0, 0, 348, 0, 0, 0, 0, 8, 15, 371
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\projects\add-project\page.tsx", "TypeScript JSX", 0, 0, 0, 85, 0, 0, 0, 0, 3, 16, 104
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\projects\add-project\project-actions.ts", "TypeScript", 0, 0, 276, 0, 0, 0, 0, 0, 13, 53, 342
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\projects\add-project\project-form-types.ts", "TypeScript", 0, 0, 22, 0, 0, 0, 0, 0, 1, 1, 24
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\projects\components\ContactProjectDialog.tsx", "TypeScript JSX", 0, 0, 0, 181, 0, 0, 0, 0, 2, 23, 206
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\projects\components\ProjectFilters.tsx", "TypeScript JSX", 0, 0, 0, 247, 0, 0, 0, 0, 1, 18, 266
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\projects\components\ProjectsCard.tsx", "TypeScript JSX", 0, 0, 0, 462, 0, 0, 0, 0, 1, 36, 499
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\listings\projects\page.tsx", "TypeScript JSX", 0, 0, 0, 92, 0, 0, 0, 0, 8, 18, 118
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-favourites\components\FavouriteButton.tsx", "TypeScript JSX", 0, 0, 0, 94, 0, 0, 0, 0, 1, 8, 103
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-favourites\components\MyFavouritesClient.tsx", "TypeScript JSX", 0, 0, 0, 945, 0, 0, 0, 0, 29, 50, 1024
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-favourites\page.tsx", "TypeScript JSX", 0, 0, 0, 378, 0, 0, 0, 0, 16, 55, 449
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\actions.ts", "TypeScript", 0, 0, 137, 0, 0, 0, 0, 0, 1, 44, 182
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\businesses\edit\[id]\components\EditBusinessClient.tsx", "TypeScript JSX", 0, 0, 0, 463, 0, 0, 0, 0, 1, 41, 505
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\businesses\edit\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 132, 0, 0, 0, 0, 1, 22, 155
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\businesses\view\[id]\components\BusinessStandardLayout.tsx", "TypeScript JSX", 0, 0, 0, 738, 0, 0, 0, 0, 12, 40, 790
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\businesses\view\[id]\components\BusinessTabbedLayout.tsx", "TypeScript JSX", 0, 0, 0, 588, 0, 0, 0, 0, 3, 51, 642
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\businesses\view\[id]\components\BusinessViewClient.tsx", "TypeScript JSX", 0, 0, 0, 231, 0, 0, 0, 0, 8, 21, 260
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\businesses\view\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 47, 0, 0, 0, 0, 5, 10, 62
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\components\MyListingsClient.tsx", "TypeScript JSX", 0, 0, 0, 195, 0, 0, 0, 0, 3, 19, 217
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\components\cards\BusinessCard.tsx", "TypeScript JSX", 0, 0, 0, 283, 0, 0, 0, 0, 8, 16, 307
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\components\cards\MaterialCard.tsx", "TypeScript JSX", 0, 0, 0, 313, 0, 0, 0, 0, 13, 21, 347
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\components\cards\PersonnelCard.tsx", "TypeScript JSX", 0, 0, 0, 362, 0, 0, 0, 0, 10, 20, 392
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\components\cards\PlantCard.tsx", "TypeScript JSX", 0, 0, 0, 363, 0, 0, 0, 0, 14, 23, 400
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\components\cards\PositionCard.tsx", "TypeScript JSX", 0, 0, 0, 249, 0, 0, 0, 0, 8, 19, 276
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\components\cards\ProjectCard.tsx", "TypeScript JSX", 0, 0, 0, 326, 0, 0, 0, 0, 11, 23, 360
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\components\cards\VehicleCard.tsx", "TypeScript JSX", 0, 0, 0, 374, 0, 0, 0, 0, 14, 23, 411
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\components\tabs\BusinessesTab.tsx", "TypeScript JSX", 0, 0, 0, 150, 0, 0, 0, 0, 4, 17, 171
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\components\tabs\MaterialsTab.tsx", "TypeScript JSX", 0, 0, 0, 151, 0, 0, 0, 0, 4, 17, 172
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\components\tabs\PersonnelTab.tsx", "TypeScript JSX", 0, 0, 0, 154, 0, 0, 0, 0, 4, 17, 175
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\components\tabs\PlantTab.tsx", "TypeScript JSX", 0, 0, 0, 147, 0, 0, 0, 0, 4, 17, 168
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\components\tabs\PositionsTab.tsx", "TypeScript JSX", 0, 0, 0, 149, 0, 0, 0, 0, 5, 18, 172
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\components\tabs\ProjectsTab.tsx", "TypeScript JSX", 0, 0, 0, 166, 0, 0, 0, 0, 5, 19, 190
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\components\tabs\VehiclesTab.tsx", "TypeScript JSX", 0, 0, 0, 155, 0, 0, 0, 0, 4, 17, 176
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\page.tsx", "TypeScript JSX", 0, 0, 0, 231, 0, 0, 0, 0, 13, 21, 265
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\personnel\edit\[id]\components\EditPersonnelClient.tsx", "TypeScript JSX", 0, 0, 0, 374, 0, 0, 0, 0, 6, 40, 420
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\personnel\edit\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 92, 0, 0, 0, 0, 1, 19, 112
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\personnel\view\[id]\components\PersonnelViewClient.tsx", "TypeScript JSX", 0, 0, 0, 547, 0, 0, 0, 0, 16, 42, 605
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\personnel\view\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 57, 0, 0, 0, 0, 1, 12, 70
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\plant\edit\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 89, 0, 0, 0, 0, 1, 19, 109
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\plant\edit\components\EditPlantClient.tsx", "TypeScript JSX", 0, 0, 0, 302, 0, 0, 0, 0, 1, 27, 330
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\plant\view\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 69, 0, 0, 0, 0, 1, 12, 82
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\plant\view\components\PlantViewClient.tsx", "TypeScript JSX", 0, 0, 0, 431, 0, 0, 0, 0, 14, 27, 472
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\positions\edit\[id]\components\EditPositionClient.tsx", "TypeScript JSX", 0, 0, 0, 342, 0, 0, 0, 0, 1, 33, 376
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\positions\edit\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 127, 0, 0, 0, 0, 2, 25, 154
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\positions\view\[id]\components\PositionViewClient.tsx", "TypeScript JSX", 0, 0, 0, 441, 0, 0, 0, 0, 11, 34, 486
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\positions\view\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 67, 0, 0, 0, 0, 1, 12, 80
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\projects\edit\[id]\components\EditProjectClient.tsx", "TypeScript JSX", 0, 0, 0, 372, 0, 0, 0, 0, 6, 34, 412
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\projects\edit\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 129, 0, 0, 0, 0, 2, 25, 156
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\projects\view\[id]\components\ProjectsViewClient.tsx", "TypeScript JSX", 0, 0, 0, 528, 0, 0, 0, 0, 14, 40, 582
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\my-listings\projects\view\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 74, 0, 0, 0, 0, 1, 12, 87
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\notifications\components\NotificationClient.tsx", "TypeScript JSX", 0, 0, 0, 365, 0, 0, 0, 0, 9, 30, 404
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\notifications\page.tsx", "TypeScript JSX", 0, 0, 0, 28, 0, 0, 0, 0, 1, 8, 37
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\privacy\page.tsx", "TypeScript JSX", 0, 0, 0, 227, 0, 0, 0, 0, 1, 22, 250
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\add-business\actions.ts", "TypeScript", 0, 0, 602, 0, 0, 0, 0, 0, 36, 91, 729
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\add-business\business-form-types.ts", "TypeScript", 0, 0, 65, 0, 0, 0, 0, 0, 5, 10, 80
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\add-business\components\AddBusinessClient.tsx", "TypeScript JSX", 0, 0, 0, 434, 0, 0, 0, 0, 16, 33, 483
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\add-business\components\ImageUpload.tsx", "TypeScript JSX", 0, 0, 0, 181, 0, 0, 0, 0, 5, 16, 202
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\add-business\components\steps\BusinessInformationStep.tsx", "TypeScript JSX", 0, 0, 0, 195, 0, 0, 0, 0, 2, 15, 212
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\add-business\components\steps\DetailsStep.tsx", "TypeScript JSX", 0, 0, 0, 173, 0, 0, 0, 0, 3, 10, 186
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\add-business\components\steps\LocationContactsStep.tsx", "TypeScript JSX", 0, 0, 0, 494, 0, 0, 0, 0, 8, 25, 527
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\add-business\components\steps\ReviewStep.tsx", "TypeScript JSX", 0, 0, 0, 367, 0, 0, 0, 0, 29, 22, 418
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\add-business\components\steps\ServicesOperationsStep.tsx", "TypeScript JSX", 0, 0, 0, 311, 0, 0, 0, 0, 3, 19, 333
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\add-business\page.tsx", "TypeScript JSX", 0, 0, 0, 61, 0, 0, 0, 0, 2, 12, 75
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\components\BusinessCard.tsx", "TypeScript JSX", 0, 0, 0, 283, 0, 0, 0, 0, 8, 16, 307
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\components\MyBusinessesClient.tsx", "TypeScript JSX", 0, 0, 0, 152, 0, 0, 0, 0, 4, 21, 177
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\edit\[id]\components\EditBusinessClient.tsx", "TypeScript JSX", 0, 0, 0, 463, 0, 0, 0, 0, 1, 41, 505
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\edit\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 132, 0, 0, 0, 0, 1, 22, 155
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\page.tsx", "TypeScript JSX", 0, 0, 0, 24, 0, 0, 0, 0, 1, 8, 33
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\view\[id]\components\BusinessStandardLayout.tsx", "TypeScript JSX", 0, 0, 0, 738, 0, 0, 0, 0, 12, 40, 790
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\view\[id]\components\BusinessTabbedLayout.tsx", "TypeScript JSX", 0, 0, 0, 588, 0, 0, 0, 0, 3, 51, 642
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\view\[id]\components\BusinessViewClient.tsx", "TypeScript JSX", 0, 0, 0, 231, 0, 0, 0, 0, 8, 21, 260
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\business-profiles\view\[id]\page.tsx", "TypeScript JSX", 0, 0, 0, 47, 0, 0, 0, 0, 5, 10, 62
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\profile\components\ProfileClient.tsx", "TypeScript JSX", 0, 0, 0, 575, 0, 0, 0, 0, 16, 43, 634
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\profile\edit\components\steps\EditProfileClient.tsx", "TypeScript JSX", 0, 0, 0, 379, 0, 0, 0, 0, 17, 44, 440
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\profile\edit\components\steps\GalleryStep.tsx", "TypeScript JSX", 0, 0, 0, 276, 0, 0, 0, 0, 3, 18, 297
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\profile\edit\components\steps\LocationAvailabilityStep.tsx", "TypeScript JSX", 0, 0, 0, 173, 0, 0, 0, 0, 1, 18, 192
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\profile\edit\components\steps\ReviewStep.tsx", "TypeScript JSX", 0, 0, 0, 485, 0, 0, 0, 0, 22, 39, 546
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\profile\edit\components\steps\SkillsCredentialsStep.tsx", "TypeScript JSX", 0, 0, 0, 292, 0, 0, 0, 0, 6, 24, 322
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\profile\edit\components\steps\TradeDetailsStep.tsx", "TypeScript JSX", 0, 0, 0, 149, 0, 0, 0, 0, 1, 14, 164
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\profile\edit\components\steps\UserInfoStep.tsx", "TypeScript JSX", 0, 0, 0, 189, 0, 0, 0, 0, 6, 19, 214
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\profile\edit\page.tsx", "TypeScript JSX", 0, 0, 0, 24, 0, 0, 0, 0, 1, 9, 34
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\profile\page.tsx", "TypeScript JSX", 0, 0, 0, 24, 0, 0, 0, 0, 1, 9, 34
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\profile\profile-actions.ts", "TypeScript", 0, 0, 286, 0, 0, 0, 0, 0, 17, 49, 352
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\profiles\profile\types\profile-types.ts", "TypeScript", 0, 0, 57, 0, 0, 0, 0, 0, 7, 8, 72
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\settings\actions.ts", "TypeScript", 0, 0, 42, 0, 0, 0, 0, 0, 4, 11, 57
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\settings\components\SettingsClient.tsx", "TypeScript JSX", 0, 0, 0, 669, 0, 0, 0, 0, 23, 52, 744
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\settings\page.tsx", "TypeScript JSX", 0, 0, 0, 23, 0, 0, 0, 0, 1, 6, 30
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\terms\page.tsx", "TypeScript JSX", 0, 0, 0, 231, 0, 0, 0, 0, 1, 20, 252
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\(dashboard)\testing\page.tsx", "TypeScript JSX", 0, 0, 0, 25, 0, 0, 0, 0, 1, 4, 30
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\ad-responses\check-existing\route.ts", "TypeScript", 0, 0, 50, 0, 0, 0, 0, 0, 0, 11, 61
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\ad-responses\check-limit\route.ts", "TypeScript", 0, 0, 35, 0, 0, 0, 0, 0, 0, 8, 43
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\ad-responses\route.ts", "TypeScript", 0, 0, 79, 0, 0, 0, 0, 0, 3, 14, 96
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\businesses\contact\route.ts", "TypeScript", 0, 0, 198, 0, 0, 0, 0, 0, 18, 32, 248
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\cancel-subscription\route.ts", "TypeScript", 0, 0, 119, 0, 0, 0, 0, 0, 10, 23, 152
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\checkout\route.ts", "TypeScript", 0, 0, 210, 0, 0, 0, 0, 0, 12, 40, 262
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\my-favourites\route.ts", "TypeScript", 0, 0, 207, 0, 0, 0, 0, 0, 17, 46, 270
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\my-saved-trades\route.ts", "TypeScript", 0, 0, 117, 0, 0, 0, 0, 0, 6, 22, 145
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\notifications\delete\route.ts", "TypeScript", 0, 0, 37, 0, 0, 0, 0, 0, 0, 8, 45
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\notifications\mark-all-read\route.ts", "TypeScript", 0, 0, 30, 0, 0, 0, 0, 0, 0, 6, 36
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\notifications\mark-read\route.ts", "TypeScript", 0, 0, 37, 0, 0, 0, 0, 0, 0, 8, 45
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\payments\route.ts", "TypeScript", 0, 0, 40, 0, 0, 0, 0, 0, 0, 7, 47
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\personnel\contact\route.ts", "TypeScript", 0, 0, 203, 0, 0, 0, 0, 0, 17, 31, 251
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\plans\route.ts", "TypeScript", 0, 0, 74, 0, 0, 0, 0, 0, 2, 9, 85
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\positions\contact\route.ts", "TypeScript", 0, 0, 229, 0, 0, 0, 0, 0, 17, 34, 280
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\projects\contact\route.ts", "TypeScript", 0, 0, 230, 0, 0, 0, 0, 0, 17, 33, 280
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\r2\upload\route.ts", "TypeScript", 0, 0, 151, 0, 0, 0, 0, 0, 29, 25, 205
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\subscription\route.ts", "TypeScript", 0, 0, 51, 0, 0, 0, 0, 0, 2, 7, 60
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\test-google-geocoding\route.ts", "TypeScript", 0, 0, 25, 0, 0, 0, 0, 0, 5, 6, 36
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\update-settings\route.ts", "TypeScript", 0, 0, 38, 0, 0, 0, 0, 0, 1, 8, 47
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\usage\route.ts", "TypeScript", 0, 0, 53, 0, 0, 0, 0, 0, 1, 7, 61
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\api\webhooks\stripe\route.ts", "TypeScript", 0, 0, 337, 0, 0, 0, 0, 0, 13, 52, 402
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\globals.css", "PostCSS", 0, 0, 0, 0, 36, 0, 0, 0, 0, 7, 43
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\layout.tsx", "TypeScript JSX", 0, 0, 0, 85, 0, 0, 0, 0, 0, 12, 97
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\page.module.css", "PostCSS", 0, 0, 0, 0, 141, 0, 0, 0, 1, 27, 169
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\app\page.tsx", "TypeScript JSX", 0, 0, 0, 61, 0, 0, 0, 0, 0, 7, 68
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\AddressAutoComplete.tsx", "TypeScript JSX", 0, 0, 0, 201, 0, 0, 0, 0, 3, 19, 223
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\BorderedBox.tsx", "TypeScript JSX", 0, 0, 0, 9, 0, 0, 0, 0, 0, 4, 13
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\Center.tsx", "TypeScript JSX", 0, 0, 0, 19, 0, 0, 0, 0, 1, 3, 23
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\CustomCard.tsx", "TypeScript JSX", 0, 0, 0, 52, 0, 0, 0, 0, 0, 8, 60
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\CustomStepper.tsx", "TypeScript JSX", 0, 0, 0, 294, 0, 0, 0, 0, 12, 16, 322
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\CustomTextField.tsx", "TypeScript JSX", 0, 0, 0, 84, 0, 0, 0, 0, 0, 7, 91
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\DisplayBox.tsx", "TypeScript JSX", 0, 0, 0, 64, 0, 0, 0, 0, 0, 5, 69
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\EmptyResult.tsx", "TypeScript JSX", 0, 0, 0, 54, 0, 0, 0, 0, 0, 5, 59
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\FadeIn.tsx", "TypeScript JSX", 0, 0, 0, 17, 0, 0, 0, 0, 0, 6, 23
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\GooglePlaceField.tsx", "TypeScript JSX", 0, 0, 0, 75, 0, 0, 0, 0, 1, 12, 88
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\GradientButton.tsx", "TypeScript JSX", 0, 0, 0, 49, 0, 0, 0, 0, 0, 5, 54
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\Iconify.tsx", "TypeScript JSX", 0, 0, 0, 22, 0, 0, 0, 0, 0, 3, 25
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\ImageCrossfade.tsx", "TypeScript JSX", 0, 0, 0, 63, 0, 0, 0, 0, 0, 9, 72
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\InnerCustomCard.tsx", "TypeScript JSX", 0, 0, 0, 32, 0, 0, 0, 0, 2, 9, 43
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\Logo.tsx", "TypeScript JSX", 0, 0, 0, 165, 0, 0, 0, 0, 13, 13, 191
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\Middle.tsx", "TypeScript JSX", 0, 0, 0, 17, 0, 0, 0, 0, 0, 4, 21
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\PageHeader.tsx", "TypeScript JSX", 0, 0, 0, 16, 0, 0, 0, 0, 0, 4, 20
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\PlaceSearchBox.tsx", "TypeScript JSX", 0, 0, 0, 43, 0, 0, 0, 0, 1, 11, 55
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\PricingSection.tsx", "TypeScript JSX", 0, 0, 0, 594, 0, 0, 0, 0, 19, 47, 660
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\ResponsiveTabs.tsx", "TypeScript JSX", 0, 0, 0, 51, 0, 0, 0, 0, 1, 9, 61
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\ServiceAreasSelector.tsx", "TypeScript JSX", 0, 0, 0, 291, 0, 0, 0, 0, 18, 33, 342
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\ShareButton.tsx", "TypeScript JSX", 0, 0, 0, 640, 0, 0, 0, 0, 26, 41, 707
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\Slogan.tsx", "TypeScript JSX", 0, 0, 0, 21, 0, 0, 0, 0, 0, 4, 25
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\auth\SocialProviders.tsx", "TypeScript JSX", 0, 0, 0, 20, 0, 0, 0, 0, 0, 3, 23
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\notifications\CustomSnackbar.tsx", "TypeScript JSX", 0, 0, 0, 120, 0, 0, 0, 0, 5, 11, 136
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\pricing-section\components\PricingSection.tsx", "TypeScript JSX", 0, 0, 0, 75, 0, 0, 0, 0, 1, 10, 86
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\components\pricing-section\components\PricingSectionClient.tsx", "TypeScript JSX", 0, 0, 0, 604, 0, 0, 0, 0, 21, 44, 669
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\emails\BusinessContactNotificationEmail.tsx", "TypeScript JSX", 0, 0, 0, 177, 0, 0, 0, 0, 1, 26, 204
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\emails\PersonnelContactNotificationEmail.tsx", "TypeScript JSX", 0, 0, 0, 193, 0, 0, 0, 0, 2, 30, 225
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\emails\PositionContactNotificationEmail.tsx", "TypeScript JSX", 0, 0, 0, 181, 0, 0, 0, 0, 2, 25, 208
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\emails\ProjectContactNotificationEmail.tsx", "TypeScript JSX", 0, 0, 0, 181, 0, 0, 0, 0, 1, 25, 207
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\global\Center.tsx", "TypeScript JSX", 0, 0, 0, 11, 0, 0, 0, 0, 0, 4, 15
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\global\CustomTabs.tsx", "TypeScript JSX", 0, 0, 0, 87, 0, 0, 0, 0, 1, 16, 104
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\global\Flex.tsx", "TypeScript JSX", 0, 0, 0, 33, 0, 0, 0, 0, 0, 4, 37
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\global\HStack.tsx", "TypeScript JSX", 0, 0, 0, 28, 0, 0, 0, 0, 0, 4, 32
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\global\Stack.tsx", "TypeScript JSX", 0, 0, 0, 30, 0, 0, 0, 0, 0, 4, 34
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\global\VStack.tsx", "TypeScript JSX", 0, 0, 0, 28, 0, 0, 0, 0, 0, 4, 32
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\hooks\setActiveRoute.tsx", "TypeScript JSX", 0, 0, 0, 14, 0, 0, 0, 0, 0, 7, 21
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\hooks\useFavourite.ts", "TypeScript", 0, 0, 87, 0, 0, 0, 0, 0, 11, 9, 107
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\hooks\useFontLoaded.tsx", "TypeScript JSX", 0, 0, 0, 21, 0, 0, 0, 0, 2, 4, 27
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\hooks\useNotification.tsx", "TypeScript JSX", 0, 0, 0, 36, 0, 0, 0, 0, 0, 9, 45
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\hooks\useSubscription.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 312, 1, 313
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\hooks\useThemeMode.ts", "TypeScript", 0, 0, 9, 0, 0, 0, 0, 0, 0, 2, 11
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\hooks\useToggle.ts", "TypeScript", 0, 0, 9, 0, 0, 0, 0, 0, 0, 4, 13
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\hooks\useUser.ts", "TypeScript", 0, 0, 22, 0, 0, 0, 0, 0, 3, 8, 33
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\actions\business-actions.ts", "TypeScript", 0, 0, 208, 0, 0, 0, 0, 0, 12, 28, 248
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\authActions.ts", "TypeScript", 0, 0, 19, 0, 0, 0, 0, 0, 0, 6, 25
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\business-utils.ts", "TypeScript", 0, 0, 107, 0, 0, 0, 0, 0, 4, 21, 132
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\data\businessData.ts", "TypeScript", 0, 0, 566, 0, 0, 0, 0, 0, 9, 16, 591
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\data\googleRegions.ts", "TypeScript", 0, 0, 18, 0, 0, 0, 0, 0, 0, 1, 19
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\data\materialData.ts", "TypeScript", 0, 0, 72, 0, 0, 0, 0, 0, 1, 9, 82
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\data\navItemData.ts", "TypeScript", 0, 0, 137, 0, 0, 0, 0, 0, 14, 4, 155
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\data\personnelData.ts", "TypeScript", 0, 0, 268, 0, 0, 0, 0, 0, 1, 2, 271
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\data\plantData.ts", "TypeScript", 0, 0, 77, 0, 0, 0, 0, 0, 1, 7, 85
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\data\positionData.ts", "TypeScript", 0, 0, 343, 0, 0, 0, 0, 0, 0, 4, 347
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\data\projectData.ts", "TypeScript", 0, 0, 275, 0, 0, 0, 0, 0, 0, 6, 281
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\data\regions.ts", "TypeScript", 0, 0, 18, 0, 0, 0, 0, 0, 0, 1, 19
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\data\reviewData.ts", "TypeScript", 0, 0, 21, 0, 0, 0, 0, 0, 0, 2, 23
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\data\skillsAndAccreditations.ts", "TypeScript", 0, 0, 61, 0, 0, 0, 0, 0, 1, 2, 64
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\data\vehicleData.ts", "TypeScript", 0, 0, 70, 0, 0, 0, 0, 0, 1, 8, 79
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\emailService.ts", "TypeScript", 0, 0, 614, 0, 0, 0, 0, 0, 35, 55, 704
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\lib\geocoding-service.ts", "TypeScript", 0, 0, 194, 0, 0, 0, 0, 0, 13, 35, 242
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\providers\ActiveRouteProvider.tsx", "TypeScript JSX", 0, 0, 0, 27, 0, 0, 0, 0, 2, 9, 38
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\providers\AppProviders.tsx", "TypeScript JSX", 0, 0, 0, 18, 0, 0, 0, 0, 1, 5, 24
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\providers\GoogleMapsProvider.tsx", "TypeScript JSX", 0, 0, 0, 20, 0, 0, 0, 0, 0, 5, 25
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\providers\NotistackProvider.tsx", "TypeScript JSX", 0, 0, 0, 31, 0, 0, 0, 0, 0, 3, 34
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\providers\ThemeProvider.tsx", "TypeScript JSX", 0, 0, 0, 57, 0, 0, 0, 0, 3, 12, 72
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\store\userStore.ts", "TypeScript", 0, 0, 16, 0, 0, 0, 0, 0, 1, 4, 21
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\styles\GeminiChip.tsx", "TypeScript JSX", 0, 0, 0, 43, 0, 0, 0, 0, 5, 6, 54
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\styles\globals.css", "PostCSS", 0, 0, 0, 0, 3, 0, 0, 0, 55, 3, 61
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\styles\theme.ts", "TypeScript", 0, 0, 617, 0, 0, 0, 0, 0, 6, 21, 644
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\types\business.ts", "TypeScript", 0, 0, 75, 0, 0, 0, 0, 0, 0, 5, 80
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\types\navItem.ts", "TypeScript", 0, 0, 7, 0, 0, 0, 0, 0, 0, 1, 8
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\types\personnel.ts", "TypeScript", 0, 0, 31, 0, 0, 0, 0, 0, 3, 5, 39
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\types\positions.ts", "TypeScript", 0, 0, 29, 0, 0, 0, 0, 0, 0, 2, 31
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\types\projects.ts", "TypeScript", 0, 0, 22, 0, 0, 0, 0, 0, 0, 1, 23
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\types\supabase.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\utils\auth-helper.ts", "TypeScript", 0, 0, 23, 0, 0, 0, 0, 0, 0, 8, 31
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\utils\email-notifications.ts", "TypeScript", 0, 0, 12, 0, 0, 0, 0, 0, 6, 4, 22
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\utils\favouriteUtils.ts", "TypeScript", 0, 0, 80, 0, 0, 0, 0, 0, 13, 11, 104
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\utils\routeMapping.ts", "TypeScript", 0, 0, 49, 0, 0, 0, 0, 0, 10, 13, 72
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\utils\shareUtils.ts", "TypeScript", 0, 0, 98, 0, 0, 0, 0, 0, 18, 14, 130
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\utils\supabase\admin.ts", "TypeScript", 0, 0, 7, 0, 0, 0, 0, 0, 0, 2, 9
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\utils\supabase\client.ts", "TypeScript", 0, 0, 6, 0, 0, 0, 0, 0, 0, 2, 8
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\utils\supabase\middleware.ts", "TypeScript", 0, 0, 101, 0, 0, 0, 0, 0, 27, 21, 149
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\utils\supabase\notifications.ts", "TypeScript", 0, 0, 76, 0, 0, 0, 0, 0, 15, 19, 110
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\utils\supabase\server.ts", "TypeScript", 0, 0, 42, 0, 0, 0, 0, 0, 5, 6, 53
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\src\utils\supabase\services\googlePlacesService.ts", "TypeScript", 0, 0, 58, 0, 0, 0, 0, 0, 30, 8, 96
+"c:\Users\colli\OneDrive\Desktop\tradirise-web-nz\tsconfig.json", "JSON with Comments", 27, 0, 0, 0, 0, 0, 0, 0, 0, 1, 28
+"Total", "-", 27, 13675, 10892, 55115, 180, 12, 14, 23, 2441, 6521, 88900

@@ -11,9 +11,8 @@ import {
   IconButton,
   InputAdornment,
   CircularProgress,
-  Checkbox,
-  FormControlLabel,
   FormHelperText,
+  Alert,
 } from "@mui/material";
 import { Icon } from "@iconify/react";
 import { useActionState } from "react";
@@ -21,11 +20,14 @@ import { useRouter } from "next/navigation";
 
 import Logo from "@/components/Logo";
 import SocialProviders from "@/components/auth/SocialProviders";
+
 import { useThemeMode } from "@/hooks/useThemeMode";
 import { lightTheme, darkTheme } from "@/styles/theme";
 import { createClient } from "@/utils/supabase/client";
 import { registerAction } from "../actions";
 import { useNotification } from "@/hooks/useNotification";
+import TermsModal from "./TermsModal";
+import PrivacyModal from "./PrivacyModal";
 
 interface RegisterState {
   error?: string;
@@ -58,16 +60,11 @@ export default function RegisterForm() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  // Separate tracking for each policy - NO sessionStorage
-  const [termsViewed, setTermsViewed] = useState(false);
-  const [privacyViewed, setPrivacyViewed] = useState(false);
-  const [agreedToTerms, setAgreedToTerms] = useState(false);
-  const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
-  const [termsError, setTermsError] = useState("");
-
-  // Track if user clicked the link
-  const termsLinkClicked = useRef(false);
-  const privacyLinkClicked = useRef(false);
+  // Modal state
+  const [termsModalOpen, setTermsModalOpen] = useState(false);
+  const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
 
   const [checking, setChecking] = useState(false);
   const [usernameAvailable, setUsernameAvailable] = useState<boolean | null>(
@@ -78,48 +75,6 @@ export default function RegisterForm() {
 
   const [usernameError, setUsernameError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
-
-  // Listen for when user comes back to this tab after clicking link
-  useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === "visible") {
-        // User came back to this tab
-        if (termsLinkClicked.current && !termsViewed) {
-          setTermsViewed(true);
-        }
-        if (privacyLinkClicked.current && !privacyViewed) {
-          setPrivacyViewed(true);
-        }
-      }
-    };
-
-    // Also listen for window focus
-    const handleFocus = () => {
-      if (termsLinkClicked.current && !termsViewed) {
-        setTermsViewed(true);
-      }
-      if (privacyLinkClicked.current && !privacyViewed) {
-        setPrivacyViewed(true);
-      }
-    };
-
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    window.addEventListener("focus", handleFocus);
-
-    return () => {
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-      window.removeEventListener("focus", handleFocus);
-    };
-  }, [termsViewed, privacyViewed]);
-
-  // Track when user clicks on terms/privacy links
-  const handleTermsClick = () => {
-    termsLinkClicked.current = true;
-  };
-
-  const handlePrivacyClick = () => {
-    privacyLinkClicked.current = true;
-  };
 
   // Debounced username availability check
   useEffect(() => {
@@ -235,15 +190,12 @@ export default function RegisterForm() {
       : darkTheme.palette.primary.main;
 
   const handleFormAction = (formData: FormData) => {
-    setTermsError("");
-
-    if (!agreedToTerms || !agreedToPrivacy) {
+    if (!termsAccepted || !privacyAccepted) {
       const missingItems = [];
-      if (!agreedToTerms) missingItems.push("Terms of Service");
-      if (!agreedToPrivacy) missingItems.push("Privacy Policy");
+      if (!termsAccepted) missingItems.push("Terms of Service");
+      if (!privacyAccepted) missingItems.push("Privacy Policy");
 
-      const errorMessage = `You must agree to the ${missingItems.join(" and ")}`;
-      setTermsError(errorMessage);
+      const errorMessage = `You must accept the ${missingItems.join(" and ")}`;
       notification.error(errorMessage);
       return;
     }
@@ -434,89 +386,57 @@ export default function RegisterForm() {
             {/* Terms and Privacy Policy Acceptance */}
             <Box>
               <Stack spacing={1}>
-                {/* Terms of Service Checkbox */}
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={agreedToTerms}
-                      onChange={(e) => {
-                        setAgreedToTerms(e.target.checked);
-                        if (e.target.checked && agreedToPrivacy) {
-                          setTermsError("");
-                        }
-                      }}
-                      disabled={!termsViewed || isPending}
+                {/* Terms of Service */}
+                <Alert
+                  severity={termsAccepted ? "success" : "error"}
+                  icon={
+                    <Icon
+                      icon={
+                        termsAccepted ? "mdi:check-circle" : "mdi:information"
+                      }
+                      height={20}
                     />
                   }
-                  label={
-                    <Typography variant="body2">
-                      I have read and agree to the{" "}
-                      <Link
-                        href="/terms"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        underline="hover"
-                        onClick={handleTermsClick}
-                      >
-                        Terms of Service
-                      </Link>
-                      {!termsViewed && (
-                        <Typography
-                          component="span"
-                          variant="caption"
-                          color="text.secondary"
-                          sx={{ ml: 0.5, fontStyle: "italic" }}
-                        >
-                          (open link to enable checkbox)
-                        </Typography>
-                      )}
-                    </Typography>
-                  }
-                />
+                  onClick={() => !termsAccepted && setTermsModalOpen(true)}
+                  sx={{
+                    cursor: termsAccepted ? "default" : "pointer",
+                    py: 0.2,
+                  }}
+                >
+                  <Typography variant="caption">
+                    {termsAccepted
+                      ? "Terms of Service accepted"
+                      : "Click to read and accept Terms of Service"}
+                  </Typography>
+                </Alert>
 
-                {/* Privacy Policy Checkbox */}
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={agreedToPrivacy}
-                      onChange={(e) => {
-                        setAgreedToPrivacy(e.target.checked);
-                        if (e.target.checked && agreedToTerms) {
-                          setTermsError("");
-                        }
-                      }}
-                      disabled={!privacyViewed || isPending}
+                {/* Privacy Policy */}
+                <Alert
+                  severity={privacyAccepted ? "success" : "error"}
+                  icon={
+                    <Icon
+                      icon={
+                        privacyAccepted ? "mdi:check-circle" : "mdi:information"
+                      }
+                      height={20}
                     />
                   }
-                  label={
-                    <Typography variant="body2">
-                      I have read and agree to the{" "}
-                      <Link
-                        href="/privacy"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        underline="hover"
-                        onClick={handlePrivacyClick}
-                      >
-                        Privacy Policy
-                      </Link>
-                      {!privacyViewed && (
-                        <Typography
-                          component="span"
-                          variant="caption"
-                          color="text.secondary"
-                          sx={{ ml: 0.5, fontStyle: "italic" }}
-                        >
-                          (open link to enable checkbox)
-                        </Typography>
-                      )}
-                    </Typography>
-                  }
-                />
+                  onClick={() => !privacyAccepted && setPrivacyModalOpen(true)}
+                  sx={{
+                    cursor: privacyAccepted ? "default" : "pointer",
+                    py: 0.2,
+                  }}
+                >
+                  <Typography variant="caption">
+                    {privacyAccepted
+                      ? "Privacy Policy accepted"
+                      : "Click to read and accept Privacy Policy"}
+                  </Typography>
+                </Alert>
 
-                {termsError && (
-                  <FormHelperText error sx={{ ml: 2 }}>
-                    {termsError}
+                {(!termsAccepted || !privacyAccepted) && (
+                  <FormHelperText sx={{ ml: 1, fontSize: "0.7rem" }}>
+                    Both policies must be accepted to register
                   </FormHelperText>
                 )}
               </Stack>
@@ -530,14 +450,28 @@ export default function RegisterForm() {
                 isPending ||
                 checking ||
                 usernameAvailable !== true ||
-                !agreedToTerms ||
-                !agreedToPrivacy
+                !termsAccepted ||
+                !privacyAccepted
               }
             >
               {isPending ? "Creating Account..." : "Register"}
             </Button>
           </Stack>
         </Box>
+
+        {/* Modals */}
+        <TermsModal
+          open={termsModalOpen}
+          onClose={() => setTermsModalOpen(false)}
+          onAccept={() => setTermsAccepted(true)}
+          isAccepted={termsAccepted}
+        />
+        <PrivacyModal
+          open={privacyModalOpen}
+          onClose={() => setPrivacyModalOpen(false)}
+          onAccept={() => setPrivacyAccepted(true)}
+          isAccepted={privacyAccepted}
+        />
 
         <SocialProviders />
 

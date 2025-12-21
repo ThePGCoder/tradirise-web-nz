@@ -134,7 +134,7 @@ const ContactPositionDialog: React.FC<ContactPositionDialogProps> = ({
             required
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Introduce yourself and explain why you're interested in this position..."
+            placeholder="Introduce yourself and explain why you're a good fit for this position..."
             disabled={loading || success}
             sx={{ mb: 2 }}
             inputProps={{ maxLength: 1000 }}
@@ -157,7 +157,7 @@ const ContactPositionDialog: React.FC<ContactPositionDialogProps> = ({
             fullWidth
             value={company}
             onChange={(e) => setCompany(e.target.value)}
-            placeholder="Your company or business name"
+            placeholder="Your current company or business name"
             disabled={loading || success}
             sx={{ mb: 1 }}
             inputProps={{ maxLength: 100 }}

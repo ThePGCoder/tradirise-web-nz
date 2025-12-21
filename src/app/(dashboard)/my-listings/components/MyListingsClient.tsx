@@ -1,14 +1,7 @@
 // components/MyListingsClient.tsx (Client Component)
 "use client";
 
-import {
-  Box,
-  Tab,
-  Tabs,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Box, Tab, Tabs, Typography, useTheme } from "@mui/material";
 import { useContext, useEffect, useState, useCallback } from "react";
 import PersonnelTab from "./tabs/PersonnelTab";
 import PositionsTab from "./tabs/PositionsTab";
@@ -19,11 +12,17 @@ import {
   ProjectWithProfiles,
   PositionWithProfiles,
   PersonnelWithProfile,
+  MaterialWithProfile,
+  PlantWithProfile,
+  VehicleWithProfile,
 } from "../page";
 import { ActiveRouteContext } from "@/providers/ActiveRouteProvider";
 import PageHeader from "@/components/PageHeader";
 import InnerCustomCard from "@/components/InnerCustomCard";
 import { Business } from "@/types/business";
+import MaterialsTab from "./tabs/MaterialsTab";
+import PlantTab from "./tabs/PlantTab";
+import VehiclesTab from "./tabs/VehiclesTab";
 
 interface MyListingsClientProps {
   initialData: {
@@ -31,12 +30,23 @@ interface MyListingsClientProps {
     businesses: Business[];
     positions: PositionWithProfiles[];
     projects: ProjectWithProfiles[];
+    materials: MaterialWithProfile[];
+    plant: PlantWithProfile[];
+    vehicles: VehicleWithProfile[];
   };
 }
 
-const tabs = ["Personnel", "Positions", "Projects", "Businesses"];
+const tabs = [
+  "Personnel",
+  "Positions",
+  "Projects",
+  "Businesses",
+  "Materials",
+  "Plant",
+  "Vehicles",
+];
 
-// Red Circle Badge Component
+// Compact Badge Component to match MyFavourites
 const TabLabelWithBadge = ({
   label,
   count,
@@ -53,16 +63,16 @@ const TabLabelWithBadge = ({
         <Box
           sx={{
             backgroundColor: theme.palette.primary.main,
-            color: theme.palette.error.contrastText,
+            color: theme.palette.primary.contrastText,
             borderRadius: "50%",
-            minWidth: 16,
-            height: 16,
+            minWidth: 20,
+            height: 20,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: "0.7rem",
+            fontSize: "0.75rem",
             fontWeight: 600,
-            pr: 0.1,
+            px: 0.5,
           }}
         >
           <span>{count > 99 ? "99+" : count}</span>
@@ -79,6 +89,9 @@ const MyListingsClient: React.FC<MyListingsClientProps> = ({ initialData }) => {
     businesses: initialData.businesses.length,
     positions: initialData.positions.length,
     projects: initialData.projects.length,
+    materials: initialData.materials.length,
+    plant: initialData.plant.length,
+    vehicles: initialData.vehicles.length,
   });
 
   const { changeActiveRoute } = useContext(ActiveRouteContext);
@@ -86,9 +99,6 @@ const MyListingsClient: React.FC<MyListingsClientProps> = ({ initialData }) => {
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setActiveTab(newValue);
   };
-
-  const theme = useTheme();
-  const isMdUp = useMediaQuery(theme.breakpoints.up("sm"));
 
   // Use useCallback to prevent function recreation on every render
   const handleCountChange = useCallback((tabName: string, count: number) => {
@@ -128,6 +138,27 @@ const MyListingsClient: React.FC<MyListingsClientProps> = ({ initialData }) => {
             onCountChange={(count) => handleCountChange("Businesses", count)}
           />
         );
+      case "Materials":
+        return (
+          <MaterialsTab
+            initialMaterials={initialData.materials}
+            onCountChange={(count) => handleCountChange("Materials", count)}
+          />
+        );
+      case "Plant":
+        return (
+          <PlantTab
+            initialPlant={initialData.plant}
+            onCountChange={(count) => handleCountChange("Plant", count)}
+          />
+        );
+      case "Vehicles":
+        return (
+          <VehiclesTab
+            initialVehicles={initialData.vehicles}
+            onCountChange={(count) => handleCountChange("Vehicles", count)}
+          />
+        );
       default:
         return null;
     }
@@ -150,19 +181,21 @@ const MyListingsClient: React.FC<MyListingsClientProps> = ({ initialData }) => {
         <Tabs
           value={activeTab}
           onChange={handleChange}
-          variant={isMdUp ? "fullWidth" : "scrollable"}
+          variant="scrollable"
           scrollButtons="auto"
-          sx={{
-            "& .MuiTabs-flexContainer": {
-              justifyContent: isMdUp ? "space-between" : "center",
-            },
-            "& .MuiTab-root": {
-              textTransform: "none", // Add this line
-            },
-          }}
+          allowScrollButtonsMobile
         >
           {tabs.map((item) => (
-            <Tab key={item} label={getTabLabel(item)} value={item} />
+            <Tab
+              key={item}
+              label={getTabLabel(item)}
+              value={item}
+              sx={{
+                textTransform: "none",
+                minWidth: { xs: 100, sm: 120 },
+                flex: { xs: "0 0 auto", md: 1 },
+              }}
+            />
           ))}
         </Tabs>
       </InnerCustomCard>

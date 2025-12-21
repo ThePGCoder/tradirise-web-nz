@@ -5,7 +5,8 @@ import MyFavouritesClient from "./components/MyFavouritesClient";
 
 export const metadata = {
   title: "My Favourites",
-  description: "View your saved personnel, businesses, positions, and projects",
+  description:
+    "View your saved personnel, businesses, positions, projects, vehicles, plant, and materials",
 };
 
 interface Personnel {
@@ -13,7 +14,6 @@ interface Personnel {
   first_name: string;
   last_name: string;
   primary_trade_role?: string;
-
   region?: string;
   auth_id: string;
 }
@@ -59,11 +59,44 @@ interface Project {
   business_id?: string | null;
   project_duration?: string;
   required_trades?: string[];
-  // Legacy fields for backwards compatibility
   budget_min?: number;
   budget_max?: number;
   start_date?: string;
   suburb?: string;
+}
+
+interface Vehicle {
+  id: string;
+  title: string;
+  vehicle_type: string;
+  make: string;
+  model: string;
+  year: number;
+  price: number;
+  region: string;
+  images?: string[];
+}
+
+interface Plant {
+  id: string;
+  title: string;
+  equipment_type: string;
+  category: string;
+  sale_price?: number;
+  price_type: string;
+  region: string;
+  images?: string[];
+}
+
+interface Material {
+  id: string;
+  title: string;
+  material_type: string;
+  category: string;
+  price: number;
+  unit: string;
+  region: string;
+  images?: string[];
 }
 
 interface UserProfile {
@@ -91,6 +124,9 @@ interface Favourite {
   businesses?: Business;
   position?: Position;
   project?: Project;
+  vehicle?: Vehicle;
+  plant?: Plant;
+  material?: Material;
   poster_profile?: UserProfile;
   poster_business?: BusinessProfile;
 }
@@ -143,6 +179,18 @@ export default async function MyFavouritesPage() {
       .filter((f) => f.item_type === "project")
       .map((f) => f.item_id);
 
+    const vehicleIds = favourites
+      .filter((f) => f.item_type === "vehicle")
+      .map((f) => f.item_id);
+
+    const plantIds = favourites
+      .filter((f) => f.item_type === "plant")
+      .map((f) => f.item_id);
+
+    const materialIds = favourites
+      .filter((f) => f.item_type === "material")
+      .map((f) => f.item_id);
+
     // Fetch personnel data
     let personnelData: Personnel[] = [];
     if (personnelIds.length > 0) {
@@ -155,10 +203,6 @@ export default async function MyFavouritesPage() {
 
       if (personnelError) {
         console.error("Error fetching personnel:", personnelError);
-        console.error(
-          "Personnel error details:",
-          JSON.stringify(personnelError, null, 2)
-        );
       } else {
         personnelData = (data as Personnel[]) || [];
         console.log("Personnel data fetched:", personnelData.length);
@@ -195,10 +239,6 @@ export default async function MyFavouritesPage() {
 
       if (positionError) {
         console.error("Error fetching positions:", positionError);
-        console.error(
-          "Position error details:",
-          JSON.stringify(positionError, null, 2)
-        );
       } else {
         positionData = (data as Position[]) || [];
         console.log("Position data fetched:", positionData.length);
@@ -217,13 +257,63 @@ export default async function MyFavouritesPage() {
 
       if (projectError) {
         console.error("Error fetching projects:", projectError);
-        console.error(
-          "Project error details:",
-          JSON.stringify(projectError, null, 2)
-        );
       } else {
         projectData = (data as Project[]) || [];
         console.log("Project data fetched:", projectData.length);
+      }
+    }
+
+    // Fetch vehicle data
+    let vehicleData: Vehicle[] = [];
+    if (vehicleIds.length > 0) {
+      const { data, error: vehicleError } = await supabase
+        .from("vehicle_ads")
+        .select(
+          "id, title, vehicle_type, make, model, year, price, region, images"
+        )
+        .in("id", vehicleIds);
+
+      if (vehicleError) {
+        console.error("Error fetching vehicles:", vehicleError);
+      } else {
+        vehicleData = (data as Vehicle[]) || [];
+        console.log("Vehicle data fetched:", vehicleData.length);
+      }
+    }
+
+    // Fetch plant data
+    let plantData: Plant[] = [];
+    if (plantIds.length > 0) {
+      const { data, error: plantError } = await supabase
+        .from("plant_ads")
+        .select(
+          "id, title, equipment_type, category, sale_price, price_type, region, images"
+        )
+        .in("id", plantIds);
+
+      if (plantError) {
+        console.error("Error fetching plant:", plantError);
+      } else {
+        plantData = (data as Plant[]) || [];
+        console.log("Plant data fetched:", plantData.length);
+      }
+    }
+
+    // Fetch material data
+    let materialData: Material[] = [];
+    if (materialIds.length > 0) {
+      const { data, error: materialError } = await supabase
+        .from("materials_ads")
+        .select(
+          "id, title, material_type, category, price, unit, region, images"
+        )
+        .in("id", materialIds);
+
+      if (materialError) {
+        console.error("Error fetching materials:", materialError);
+      } else {
+        materialData = (data as Material[]) || [];
+        console.log("Material data fetched:", materialData.length);
       }
     }
 
@@ -236,7 +326,7 @@ export default async function MyFavouritesPage() {
         ...projectData
           .filter((p) => !p.is_business_listing)
           .map((p) => p.auth_id),
-        ...personnelData.map((p) => p.auth_id), // Add personnel auth_ids
+        ...personnelData.map((p) => p.auth_id),
       ]),
     ];
 
@@ -294,7 +384,6 @@ export default async function MyFavouritesPage() {
         const personnel = personnelData.find((p) => p.id === favourite.item_id);
         enriched.personnel = personnel;
 
-        // Add profile avatar for personnel
         if (personnel) {
           enriched.poster_profile = userProfiles.find(
             (u) => u.id === personnel.auth_id
@@ -307,7 +396,6 @@ export default async function MyFavouritesPage() {
         const position = positionData.find((p) => p.id === favourite.item_id);
         enriched.position = position;
 
-        // Add poster info
         if (position) {
           if (position.is_business_listing && position.business_id) {
             enriched.poster_business = businessProfiles.find(
@@ -323,7 +411,6 @@ export default async function MyFavouritesPage() {
         const project = projectData.find((p) => p.id === favourite.item_id);
         enriched.project = project;
 
-        // Add poster info
         if (project) {
           if (project.is_business_listing && project.business_id) {
             enriched.poster_business = businessProfiles.find(
@@ -335,6 +422,15 @@ export default async function MyFavouritesPage() {
             );
           }
         }
+      } else if (favourite.item_type === "vehicle") {
+        const vehicle = vehicleData.find((v) => v.id === favourite.item_id);
+        enriched.vehicle = vehicle;
+      } else if (favourite.item_type === "plant") {
+        const plant = plantData.find((p) => p.id === favourite.item_id);
+        enriched.plant = plant;
+      } else if (favourite.item_type === "material") {
+        const material = materialData.find((m) => m.id === favourite.item_id);
+        enriched.material = material;
       }
 
       return enriched;

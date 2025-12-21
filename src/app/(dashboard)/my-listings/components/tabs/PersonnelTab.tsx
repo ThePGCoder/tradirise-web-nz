@@ -122,7 +122,9 @@ const PersonnelTab: React.FC<PersonnelTabProps> = ({
               title="No Personnel Listings Found"
               showButton={true}
               buttonText="Add Personnel"
-              onButtonClick={() => router.push("/create/personnel")}
+              onButtonClick={() =>
+                router.push("/listings/personnel/add-personnel")
+              }
               height="calc(100vh * 0.6)"
             />
           </Grid>

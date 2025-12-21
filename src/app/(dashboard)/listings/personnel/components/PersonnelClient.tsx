@@ -2,7 +2,18 @@
 
 import React, { useContext, useEffect, useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { Typography, Grid, Box } from "@mui/material";
+import {
+  Typography,
+  Grid,
+  Box,
+  ToggleButtonGroup,
+  ToggleButton,
+  Avatar,
+  Chip,
+  IconButton,
+} from "@mui/material";
+import { Icon } from "@iconify/react";
+import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
 
 import Flex from "@/global/Flex";
 import dayjs from "dayjs";
@@ -10,6 +21,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import isSameOrBefore from "dayjs/plugin/isSameOrBefore";
 import { ActiveRouteContext } from "@/providers/ActiveRouteProvider";
 import PersonnelCard from "./PersonnelCard";
+
 import PersonnelFilters, { FilterState } from "./PersonnelFilters";
 
 import { sharePersonnel } from "@/utils/shareUtils";
@@ -17,6 +29,7 @@ import { PersonnelWithProfile } from "../page";
 import PageHeader from "@/components/PageHeader";
 import AddButton from "@/app/(dashboard)/layout/components/AddButton";
 import EmptyResult from "@/components/EmptyResult";
+import PersonnelCardCompact from "./PersonnelCardCompact";
 
 // Add dayjs plugins
 dayjs.extend(relativeTime);
@@ -26,12 +39,21 @@ interface PersonnelClientProps {
   initialPersonnel: PersonnelWithProfile[];
 }
 
+type ViewMode = "grid" | "compact" | "table";
+
 const PersonnelClient: React.FC<PersonnelClientProps> = ({
   initialPersonnel,
 }) => {
   const { changeActiveRoute } = useContext(ActiveRouteContext);
   const router = useRouter();
   const [filtersExpanded, setFiltersExpanded] = useState<boolean>(false);
+  const [viewMode, setViewMode] = useState<ViewMode>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("personnelViewMode");
+      return (saved as ViewMode) || "grid";
+    }
+    return "grid";
+  });
 
   // Filter states
   const [filters, setFilters] = useState<FilterState>({
@@ -51,7 +73,6 @@ const PersonnelClient: React.FC<PersonnelClientProps> = ({
       ),
     ];
 
-    // Accreditations are already pre-formatted strings like "Electrical: Registered Electrician"
     const accreditations = [
       ...new Set(initialPersonnel.flatMap((p) => p.accreditations || [])),
     ];
@@ -176,7 +197,6 @@ const PersonnelClient: React.FC<PersonnelClientProps> = ({
 
   const handleSave = (personnelId: string) => {
     console.log(`Saving personnel ID: ${personnelId}`);
-    // TODO: Implement save logic here
   };
 
   const handleShare = async (personnelId: string) => {
@@ -195,7 +215,6 @@ const PersonnelClient: React.FC<PersonnelClientProps> = ({
       if (result.success) {
         if (result.method === "clipboard") {
           alert("Link copied to clipboard!");
-          // TODO: Replace with proper toast/snackbar notification
         }
       } else if (result.cancelled) {
         console.log("Share cancelled by user");
@@ -227,6 +246,16 @@ const PersonnelClient: React.FC<PersonnelClientProps> = ({
     });
   };
 
+  const handleViewModeChange = (
+    _event: React.MouseEvent<HTMLElement>,
+    newMode: ViewMode | null
+  ) => {
+    if (newMode !== null) {
+      setViewMode(newMode);
+      localStorage.setItem("personnelViewMode", newMode);
+    }
+  };
+
   const hasActiveFilters = Boolean(
     filters.trade ||
       filters.accreditations.length > 0 ||
@@ -234,6 +263,134 @@ const PersonnelClient: React.FC<PersonnelClientProps> = ({
       filters.region ||
       filters.searchText.trim()
   );
+
+  // DataGrid columns
+  const columns: GridColDef[] = [
+    {
+      field: "avatar",
+      headerName: "",
+      width: 80,
+      sortable: false,
+      renderCell: (params: GridRenderCellParams) => (
+        <Box display="flex" alignItems="center" height="100%">
+          <Avatar
+            src={
+              params.row.profiles?.avatar_url ||
+              params.row.avatar_url ||
+              undefined
+            }
+            sx={{ width: 35, height: 35 }}
+          >
+            {params.row.first_name?.[0]}
+            {params.row.last_name?.[0]}
+          </Avatar>
+        </Box>
+      ),
+    },
+    {
+      field: "name",
+      headerName: "Name",
+      flex: 1,
+      minWidth: 180,
+      renderCell: (params: GridRenderCellParams) => (
+        <Box display="flex" alignItems="center" height="100%">
+          <Typography variant="body2" fontWeight={600}>
+            {params.row.first_name} {params.row.last_name}
+          </Typography>
+        </Box>
+      ),
+    },
+    {
+      field: "primary_trade_role",
+      headerName: "Trade",
+      width: 150,
+    },
+    {
+      field: "region",
+      headerName: "Location",
+      width: 130,
+    },
+    {
+      field: "available_from",
+      headerName: "Available",
+      width: 130,
+      renderCell: (params: GridRenderCellParams) => (
+        <Box display="flex" alignItems="center" height="100%">
+          <Typography variant="body2">
+            {dayjs(params.row.available_from).format("MMM D, YYYY")}
+          </Typography>
+        </Box>
+      ),
+    },
+    {
+      field: "accreditations",
+      headerName: "Accreditations",
+      width: 150,
+      renderCell: (params: GridRenderCellParams) => (
+        <Chip
+          label={params.row.accreditations?.length || 0}
+          size="small"
+          variant="outlined"
+          sx={{ fontSize: "0.75rem" }}
+        />
+      ),
+    },
+    {
+      field: "years_experience",
+      headerName: "Experience",
+      width: 120,
+      renderCell: (params: GridRenderCellParams) => (
+        <Box display="flex" alignItems="center" height="100%">
+          <Typography variant="body2">
+            {params.row.years_experience || "N/A"} years
+          </Typography>
+        </Box>
+      ),
+    },
+    {
+      field: "created_at",
+      headerName: "Posted",
+      width: 120,
+      renderCell: (params: GridRenderCellParams) => {
+        const postedDate = dayjs(params.row.created_at);
+        const today = dayjs();
+        const diff = today.diff(postedDate, "day");
+
+        let dateText = "";
+        if (diff === 0) dateText = "Today";
+        else if (diff === 1) dateText = "Yesterday";
+        else if (diff < 7) dateText = `${diff}d ago`;
+        else if (diff < 30) dateText = `${Math.floor(diff / 7)}w ago`;
+        else dateText = `${Math.floor(diff / 30)}mo ago`;
+
+        return (
+          <Typography variant="caption" color="text.secondary">
+            {dateText}
+          </Typography>
+        );
+      },
+    },
+    {
+      field: "actions",
+      headerName: "Actions",
+      width: 100,
+      sortable: false,
+      renderCell: (params: GridRenderCellParams) => (
+        <Box>
+          <IconButton
+            size="small"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleViewDetails(params.row.id);
+            }}
+            title="View Details"
+          >
+            <Icon icon="mdi:eye" width={20} />
+          </IconButton>
+        </Box>
+      ),
+    },
+  ];
 
   return (
     <Box margin="auto" width="100%" maxWidth={1400} px={2} pb={6}>
@@ -254,56 +411,126 @@ const PersonnelClient: React.FC<PersonnelClientProps> = ({
         onClearFilters={clearAllFilters}
       />
 
-      {/* Results Summary */}
+      {/* Results Summary with View Mode Toggle */}
       <Flex justifyContent="space-between" alignItems="center" mb={2} px={2}>
-        <Typography variant="body2" color="text.secondary">
+        <Typography
+          sx={(theme) => ({
+            fontSize: {
+              xs: theme.typography.body3?.fontSize || "0.75rem",
+              sm: theme.typography.body2.fontSize,
+            },
+          })}
+          color="text.secondary"
+        >
           Showing {filteredPersonnel.length} of {initialPersonnel.length}{" "}
           personnel
+          {hasActiveFilters && " (filtered)"}
         </Typography>
+
+        {/* View Mode Toggle */}
+        <ToggleButtonGroup
+          value={viewMode}
+          exclusive
+          onChange={handleViewModeChange}
+          size="small"
+          aria-label="view mode"
+          sx={{ pt: 1 }}
+        >
+          <ToggleButton value="grid" aria-label="grid view">
+            <Icon icon="mdi:view-grid" width={20} />
+          </ToggleButton>
+          <ToggleButton value="compact" aria-label="compact view">
+            <Icon icon="mdi:view-module" width={20} />
+          </ToggleButton>
+          <ToggleButton value="table" aria-label="table view">
+            <Icon icon="mdi:table" width={20} />
+          </ToggleButton>
+        </ToggleButtonGroup>
       </Flex>
 
-      <Grid container columnSpacing={3} rowGap={3}>
-        {filteredPersonnel.length > 0 ? (
-          filteredPersonnel.map((person) => (
-            <Grid
-              key={person.id}
-              size={{ xs: 12, sm: 12, md: 12, lg: 6, xl: 4 }}
-            >
-              <PersonnelCard
-                person={person}
-                onViewDetails={handleViewDetails}
-                onContact={handleContact}
-                onSave={handleSave}
-                onShare={handleShare}
+      {/* Table View */}
+      {viewMode === "table" ? (
+        <Box sx={{ height: 600, width: "100%" }}>
+          <DataGrid
+            rows={filteredPersonnel}
+            columns={columns}
+            pageSizeOptions={[10, 25, 50, 100]}
+            initialState={{
+              pagination: {
+                paginationModel: { pageSize: 25, page: 0 },
+              },
+            }}
+            disableRowSelectionOnClick
+            onRowClick={(params) => handleViewDetails(params.row.id)}
+            sx={{
+              "& .MuiDataGrid-row": {
+                cursor: "pointer",
+              },
+              "& .MuiDataGrid-cell:focus": {
+                outline: "none",
+              },
+              "& .MuiDataGrid-row:hover": {
+                backgroundColor: "action.hover",
+              },
+            }}
+          />
+        </Box>
+      ) : (
+        /* Grid/Compact View */
+        <Grid container columnSpacing={3} rowGap={3}>
+          {filteredPersonnel.length > 0 ? (
+            filteredPersonnel.map((person) => (
+              <Grid
+                key={person.id}
+                size={
+                  viewMode === "compact"
+                    ? { xs: 12, sm: 6, md: 4, lg: 3, xl: 2.4 }
+                    : { xs: 12, sm: 12, md: 12, lg: 6, xl: 4 }
+                }
+              >
+                {viewMode === "compact" ? (
+                  <PersonnelCardCompact
+                    person={person}
+                    onViewDetails={handleViewDetails}
+                  />
+                ) : (
+                  <PersonnelCard
+                    person={person}
+                    onViewDetails={handleViewDetails}
+                    onContact={handleContact}
+                    onSave={handleSave}
+                    onShare={handleShare}
+                  />
+                )}
+              </Grid>
+            ))
+          ) : (
+            <Grid key="no-personnel" size={12}>
+              <EmptyResult
+                icon="entypo:v-card"
+                description="Add personnel to see them here."
+                title={
+                  hasActiveFilters
+                    ? "No personnel match your filters"
+                    : "No personnel available at the moment"
+                }
+                showButton={true}
+                buttonText={
+                  hasActiveFilters ? "Clear All Filters" : "Add Personnel"
+                }
+                onButtonClick={() => {
+                  if (hasActiveFilters) {
+                    clearAllFilters();
+                  } else {
+                    router.push("/listings/personnel/add-personnel");
+                  }
+                }}
+                height="calc(100vh * 0.5)"
               />
             </Grid>
-          ))
-        ) : (
-          <Grid key="no-personnel" size={12}>
-            <EmptyResult
-              icon="entypo:v-card"
-              description="Add personnel to see them here."
-              title={
-                hasActiveFilters
-                  ? "No personnel match your filters"
-                  : "No personnel available at the moment"
-              }
-              showButton={true}
-              buttonText={
-                hasActiveFilters ? "Clear All Filters" : "Add Personnel"
-              }
-              onButtonClick={() => {
-                if (hasActiveFilters) {
-                  clearAllFilters();
-                } else {
-                  router.push("/listings/personnel/add-personnel");
-                }
-              }}
-              height="calc(100vh * 0.5)"
-            />
-          </Grid>
-        )}
-      </Grid>
+          )}
+        </Grid>
+      )}
 
       <AddButton />
     </Box>

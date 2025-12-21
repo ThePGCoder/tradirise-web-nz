@@ -44,6 +44,12 @@ const LandingHero = () => {
       desc: "Make yourself available to potential clients.",
       onClick: undefined,
     },
+    {
+      icon: "icon-park-solid:market-analysis",
+      title: "List In The Marketplace",
+      desc: "List your trade assets in the marketplace.",
+      onClick: () => {},
+    },
   ];
 
   const handleExplore = () => {
@@ -57,7 +63,6 @@ const LandingHero = () => {
         <Box display={{ xs: "flex", sm: "none" }}>
           <Logo
             fontSize="36px"
-            iconHeight="40px"
             showCountry={true}
             countryFontSize={10}
             countryLetterSpacing={6}
@@ -71,7 +76,6 @@ const LandingHero = () => {
         <Box display={{ xs: "none", sm: "flex", md: "none" }}>
           <Logo
             fontSize="48px"
-            iconHeight="52px"
             showCountry={true}
             countryFontSize={12}
             countryLetterSpacing={8}
@@ -85,7 +89,6 @@ const LandingHero = () => {
         <Box display={{ xs: "none", sm: "none", md: "flex", lg: "none" }}>
           <Logo
             fontSize="60px"
-            iconHeight="64px"
             showCountry={true}
             countryFontSize={13}
             countryLetterSpacing={9}
@@ -102,7 +105,6 @@ const LandingHero = () => {
         <Box display={{ xs: "none", sm: "none", md: "none", lg: "flex" }}>
           <Logo
             fontSize="75px"
-            iconHeight="75px"
             showCountry={true}
             countryFontSize={15}
             countryLetterSpacing={10}
@@ -184,69 +186,135 @@ const LandingHero = () => {
               </Button>
             </Stack>
 
-            <Box
-              display="grid"
-              gridTemplateColumns={{ xs: "1fr", sm: "1fr 1fr" }}
-              gap={4}
-              rowGap={4}
-              sx={{ width: "100%" }}
-            >
-              {items.map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 1 + idx * 0.3,
-                    duration: 0.6,
-                  }}
-                >
-                  <CustomCard
-                    sx={{
-                      px: 3,
-                      py: 4,
-                      height: "100%",
-                      cursor: item.onClick ? "pointer" : "default",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      userSelect: "none",
+            <Box sx={{ width: "100%" }}>
+              {/* First 4 cards in 2x2 grid */}
+              <Box
+                display="grid"
+                gridTemplateColumns={{ xs: "1fr", sm: "1fr 1fr" }}
+                gap={4}
+                rowGap={4}
+                sx={{ width: "100%", mb: 4 }}
+              >
+                {items.slice(0, 4).map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: 1 + idx * 0.3,
+                      duration: 0.6,
                     }}
-                    onClick={item.onClick}
                   >
-                    <Stack
-                      spacing={1}
-                      alignItems="center"
-                      sx={{ height: "100%", justifyContent: "center" }}
+                    <CustomCard
+                      sx={{
+                        px: 3,
+                        py: 4,
+                        height: "100%",
+                        cursor: item.onClick ? "pointer" : "default",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        userSelect: "none",
+                      }}
+                      onClick={item.onClick}
                     >
-                      <Box
-                        sx={{
-                          color:
-                            mode === "light"
-                              ? lightTheme.palette.primary.main
-                              : darkTheme.palette.primary.main,
-                        }}
+                      <Stack
+                        spacing={1}
+                        alignItems="center"
+                        sx={{ height: "100%", justifyContent: "center" }}
                       >
-                        <Icon icon={item.icon} height={45} />
-                      </Box>
-                      <Typography
-                        variant="h6"
-                        textAlign="center"
-                        fontWeight="bold"
+                        <Box
+                          sx={{
+                            color:
+                              mode === "light"
+                                ? lightTheme.palette.primary.main
+                                : darkTheme.palette.primary.main,
+                          }}
+                        >
+                          <Icon icon={item.icon} height={45} />
+                        </Box>
+                        <Typography
+                          variant="h6"
+                          textAlign="center"
+                          fontWeight="bold"
+                        >
+                          {item.title}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          textAlign="center"
+                          color="text.secondary"
+                        >
+                          {item.desc}
+                        </Typography>
+                      </Stack>
+                    </CustomCard>
+                  </motion.div>
+                ))}
+              </Box>
+
+              {/* 5th card centered */}
+              <Box
+                display="flex"
+                justifyContent="center"
+                sx={{ width: "100%" }}
+              >
+                <Box sx={{ width: { xs: "100%" } }}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: 1 + 4 * 0.3,
+                      duration: 0.6,
+                    }}
+                  >
+                    <CustomCard
+                      sx={{
+                        px: 3,
+                        py: 4,
+                        height: "100%",
+                        cursor: items[4].onClick ? "pointer" : "default",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        userSelect: "none",
+                      }}
+                      onClick={items[4].onClick}
+                    >
+                      <Stack
+                        spacing={1}
+                        alignItems="center"
+                        sx={{ height: "100%", justifyContent: "center" }}
                       >
-                        {item.title}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        textAlign="center"
-                        color="text.secondary"
-                      >
-                        {item.desc}
-                      </Typography>
-                    </Stack>
-                  </CustomCard>
-                </motion.div>
-              ))}
+                        <Box
+                          sx={{
+                            color:
+                              mode === "light"
+                                ? lightTheme.palette.primary.main
+                                : darkTheme.palette.primary.main,
+                          }}
+                        >
+                          <Icon icon={items[4].icon} height={45} />
+                        </Box>
+                        <Typography
+                          variant="h6"
+                          textAlign="center"
+                          fontWeight="bold"
+                        >
+                          {items[4].title}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          textAlign="center"
+                          color="text.secondary"
+                        >
+                          {items[4].desc}
+                        </Typography>
+                      </Stack>
+                    </CustomCard>
+                  </motion.div>
+                </Box>
+              </Box>
             </Box>
           </Stack>
         </Center>
