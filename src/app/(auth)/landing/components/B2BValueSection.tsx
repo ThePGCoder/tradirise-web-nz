@@ -31,8 +31,8 @@ const B2BValueSection = () => {
     },
     {
       icon: "mdi:handshake",
-      title: "Direct B2B Connections",
-      desc: "Build lasting business relationships without intermediaries. Connect with clients and employers who value quality work and professional service.",
+      title: "Direct Professional Connections",
+      desc: "Build lasting professional relationships without intermediaries. Connect with clients and employers who value quality work and service.",
     },
   ];
 

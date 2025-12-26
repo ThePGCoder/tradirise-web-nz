@@ -11,6 +11,9 @@ import PricingSectionClient from "@/components/pricing-section/components/Pricin
 import LandingHero from "./LandingHero";
 import LandingNavigation from "./LandingNavigation";
 import { useThemeMode } from "@/hooks/useThemeMode";
+import LandingClassifiedsSection from "./LandingClassifiedSection";
+import AboutSection from "./AboutSection";
+import ComparisonChart from "./ComparisonChart";
 
 // Define background images
 const BACKGROUND_IMAGES = ["/site.png", "/site2.png", "/site3.png"];
@@ -154,6 +157,12 @@ export default function LandingSection({ plans }: LandingSectionProps) {
         <Box p={4}>
           {/* B2B Value Proposition Section */}
           <B2BValueSection />
+
+          {/* About Section - What We Do/Don't Do */}
+          <AboutSection />
+
+          {/* Comparison Chart */}
+          <ComparisonChart />
 
           {/* Pricing Section */}
           <Box id="pricing-section">

@@ -22,32 +22,34 @@ const LandingHero = () => {
   const items = [
     {
       icon: "eos-icons:role-binding",
-      title: "List A Position",
-      desc: "List a position available in your business.",
+      title: "List a Position",
+      desc: "Post a classified listing for an available position in your business.",
       onClick: () => {},
     },
     {
       icon: "mingcute:house-fill",
-      title: "List Your Project",
-      desc: "Find suitable trades to help with your project.",
+      title: "List a Project",
+      desc: "Post a project listing to connect with suitable trades.",
       onClick: undefined,
     },
     {
       icon: "entypo:v-card",
-      title: "List Your Trade Skills",
-      desc: "Make yourself available to other businesses.",
+      title: "List Trade Skills",
+      desc: "Create a classified profile showcasing your trade skills.",
       onClick: () => {},
     },
     {
       icon: "ic:baseline-business",
       title: "List Your Business",
-      desc: "Make yourself available to potential clients.",
+      desc: "Publish a business listing to be discovered by potential clients.",
       onClick: undefined,
     },
+
     {
       icon: "icon-park-solid:market-analysis",
-      title: "List In The Marketplace",
-      desc: "List your trade assets in the marketplace.",
+      title: "List Trade Assets",
+      desc: "Advertise equipment, vehicles, and materials as classified listings.",
+
       onClick: () => {},
     },
   ];
@@ -132,8 +134,9 @@ const LandingHero = () => {
               sx={{ maxWidth: 1200, userSelect: "none" }}
             >
               <Typography variant="subtitle1" sx={{ mt: 4 }}>
-                Connecting tradespeople, clients, employers, and businesses —
-                all in one place. Find work, post jobs, and grow your trade.
+                Connecting tradespeople, clients, and businesses through modern
+                trade classifieds — all in one place. Post listings, discover
+                opportunities, and grow your trade presence.
               </Typography>
             </Box>
 

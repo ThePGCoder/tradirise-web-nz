@@ -15,7 +15,7 @@ const Slogan: React.FC<SloganProps> = ({ fontSize }) => {
         alignItems="center"
         fontWeight="bold"
       >
-        &#34;Find Work. Hire Talent. Post Jobs. Get Seen.&#34;
+        &#34;Trade Classifieds Made Simple.&#34;
       </Typography>
     </>
   );

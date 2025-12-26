@@ -71,7 +71,7 @@ export default function PrivacyModal({
           </IconButton>
         </Box>
         <Typography variant="caption" color="text.secondary">
-          Last Updated: November 3, 2025
+          Last Updated: December 24, 2024
         </Typography>
       </DialogTitle>
 
@@ -86,14 +86,8 @@ export default function PrivacyModal({
             1. Introduction
           </Typography>
           <Typography paragraph>
-            Tradirise (&#34;we&#34;, &#34;us&#34;, &#34;our&#34;) is committed
-            to protecting your privacy. This Privacy Policy explains how we
-            collect, use, disclose, and safeguard your personal information when
-            you use our Platform.
-          </Typography>
-          <Typography paragraph>
-            Tradirise is operated as a sole proprietorship based in Wellington,
-            New Zealand, and is subject to the Privacy Act 2020 (New Zealand).
+            Tradirise is committed to protecting your privacy. We comply with
+            the Privacy Act 2020 (New Zealand).
           </Typography>
 
           <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
@@ -102,56 +96,42 @@ export default function PrivacyModal({
           <Typography variant="subtitle1" gutterBottom>
             2.1 Information You Provide
           </Typography>
-          <Typography paragraph>
-            When you register and use our Platform, we collect personal
-            information for the purpose of operating and improving our services,
-            connecting users, processing payments, and complying with our legal
-            obligations. This includes:
-          </Typography>
           <Typography component="ul" sx={{ pl: 4 }}>
-            <li>Name and contact information (email, phone)</li>
-            <li>Username and password</li>
-            <li>Business name and registration details (if applicable)</li>
-            <li>Profile information (skills, experience, certifications)</li>
-            <li>Job listings and service requests</li>
-            <li>Messages sent through the Platform</li>
-            <li>Reviews and ratings</li>
+            <li>Name, email, phone, address</li>
+            <li>Business details and NZBN</li>
+            <li>Trade credentials and licenses</li>
+            <li>Insurance details</li>
+            <li>Job listings and reviews</li>
           </Typography>
 
           <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
-            2.2 Automatically Collected Information
+            2.2 Automatically Collected
           </Typography>
           <Typography component="ul" sx={{ pl: 4 }}>
-            <li>IP address and device information</li>
-            <li>Browser type and version</li>
-            <li>Pages visited and usage patterns</li>
-            <li>Cookies and tracking technologies</li>
+            <li>IP address and device info</li>
+            <li>Browser type and usage patterns</li>
+            <li>Cookies and tracking</li>
           </Typography>
 
           <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
             2.3 Payment Information
           </Typography>
           <Typography paragraph>
-            Payment information is collected and processed securely by Stripe.
-            We do not store full credit card details on our servers. We may
-            retain transaction history and payment receipts for accounting and
-            tax compliance.
+            Processed by Stripe. We retain transaction records for 7 years (IRD
+            requirement).
           </Typography>
 
           <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
             3. How We Use Your Information
           </Typography>
-          <Typography paragraph>We use your information to:</Typography>
           <Typography component="ul" sx={{ pl: 4 }}>
-            <li>Create and manage your account</li>
-            <li>Facilitate job postings and user connections</li>
-            <li>Enable secure messaging between users</li>
-            <li>Process payments and subscriptions</li>
-            <li>Send transactional emails and notifications</li>
-            <li>Provide customer support</li>
-            <li>Improve and personalise the Platform</li>
-            <li>Detect and prevent fraud and abuse</li>
-            <li>Comply with legal and regulatory obligations</li>
+            <li>Account management</li>
+            <li>Facilitate connections</li>
+            <li>Process payments</li>
+            <li>Send notifications</li>
+            <li>Provide support</li>
+            <li>Prevent fraud</li>
+            <li>Legal compliance</li>
           </Typography>
 
           <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
@@ -161,120 +141,121 @@ export default function PrivacyModal({
             4.1 With Other Users
           </Typography>
           <Typography paragraph>
-            Your profile information, listings, and reviews are visible to other
-            users. Messages are private between sender and recipient.
+            Profile, listings, and reviews are visible to other users.
           </Typography>
 
-          <Typography variant="subtitle1" gutterBottom>
+          <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
             4.2 Service Providers
           </Typography>
-          <Typography paragraph>
-            We may share information with third-party providers that support our
-            operations, including:
-          </Typography>
           <Typography component="ul" sx={{ pl: 4 }}>
-            <li>Stripe (payment processing)</li>
-            <li>Cloud hosting and storage (e.g. AWS, Google Cloud)</li>
-            <li>Email and notification services</li>
-            <li>Analytics and monitoring tools</li>
+            <li>Stripe (payments)</li>
+            <li>Cloud hosting (AWS, Google Cloud, Vercel)</li>
+            <li>Email services</li>
+            <li>Analytics tools</li>
           </Typography>
 
           <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
             4.3 Overseas Data Storage
           </Typography>
           <Typography paragraph>
-            Some of our service providers may store or process information
-            outside New Zealand (e.g., in Australia, the US, or the EU). Where
-            this occurs, we ensure comparable safeguards are in place in
-            accordance with the Privacy Act 2020.
+            Data may be stored in Australia, US, or EU with comparable
+            safeguards per Privacy Act 2020.
           </Typography>
 
           <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
             4.4 Legal Requirements
           </Typography>
           <Typography paragraph>
-            We may disclose your information if required by law or in response
-            to lawful requests, subpoenas, or investigations by authorities.
+            We may disclose information for legal compliance or law enforcement.
+          </Typography>
+
+          <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
+            4.5 Business Transfers
+          </Typography>
+          <Typography paragraph>
+            Information may transfer if Tradirise is sold or merged.
           </Typography>
 
           <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
             5. Data Security
           </Typography>
           <Typography paragraph>
-            We implement reasonable security measures including encryption,
-            secure authentication, and regular reviews. However, no method of
-            transmission or storage is completely secure, and we cannot
-            guarantee absolute security.
+            We use encryption, secure authentication, and regular security
+            reviews. However, no system is 100% secure.
+          </Typography>
+
+          <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
+            5.1 Data Breach Notification
+          </Typography>
+          <Typography paragraph>
+            We will notify affected individuals and the Privacy Commissioner as
+            required by Privacy Act 2020.
           </Typography>
 
           <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
             6. Your Rights
           </Typography>
-          <Typography paragraph>You have the right to:</Typography>
           <Typography component="ul" sx={{ pl: 4 }}>
-            <li>Access the personal information we hold about you</li>
-            <li>Request correction of inaccurate information</li>
-            <li>Request deletion of your account and data</li>
-            <li>Opt out of marketing communications</li>
-            <li>Request a copy of your data in a portable format</li>
+            <li>Access your information</li>
+            <li>Request corrections</li>
+            <li>Request deletion (subject to legal requirements)</li>
+            <li>Data portability</li>
+            <li>Opt-out of marketing</li>
+            <li>Lodge complaints</li>
           </Typography>
-          <Typography paragraph>
-            To exercise these rights, please contact us using the details below.
-            We may need to verify your identity before processing requests.
+          <Typography paragraph sx={{ mt: 1 }}>
+            Contact us to exercise these rights. We respond within 20 working
+            days.
           </Typography>
 
           <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
             7. Cookies
           </Typography>
           <Typography paragraph>
-            We use cookies and similar technologies for essential functionality,
-            analytics, and improving your experience. You can control cookies
-            through your browser settings, but disabling them may affect
-            Platform performance.
+            We use essential, analytics, and performance cookies. Control via
+            browser settings.
           </Typography>
 
           <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
             8. Data Retention
           </Typography>
-          <Typography paragraph>
-            We retain your information while your account is active or as
-            required for the purposes described in this policy. When you delete
-            your account, most personal information is deleted within 30 days,
-            though some records may be retained as required by law.
+          <Typography component="ul" sx={{ pl: 4 }}>
+            <li>Active accounts: retained while active</li>
+            <li>Deleted accounts: most data deleted within 30 days</li>
+            <li>Transaction records: 7 years (tax compliance)</li>
           </Typography>
 
           <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
             9. Marketing Communications
           </Typography>
           <Typography paragraph>
-            We may send you marketing or promotional messages if you have opted
-            in. You can withdraw consent or unsubscribe at any time by following
-            the link in our emails or contacting us directly.
+            Opt-in required. Unsubscribe anytime via email link or account
+            settings.
           </Typography>
 
           <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
-            10. Children
+            10. Children&#39;s Privacy
           </Typography>
           <Typography paragraph>
-            Our Platform is intended for users aged 18 and over. We do not
-            knowingly collect personal information from minors.
+            Platform is for 18+. We don&#39;t knowingly collect minor data.
           </Typography>
 
           <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
-            11. Changes to This Policy
+            11. Third-Party Links
           </Typography>
           <Typography paragraph>
-            We may update this Privacy Policy from time to time. The updated
-            version will be posted on this page, and the &#34;Last Updated&#34;
-            date will be revised accordingly.
+            Not responsible for third-party privacy practices.
           </Typography>
 
           <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
-            12. Contact Us
+            12. Changes to Policy
           </Typography>
           <Typography paragraph>
-            For any privacy-related questions, requests, or complaints, please
-            contact:
+            We may update this policy. Material changes will be notified.
+          </Typography>
+
+          <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
+            13. Contact Us
           </Typography>
           <Typography paragraph>
             Email: thepgcoder@gmail.com
@@ -283,16 +264,14 @@ export default function PrivacyModal({
           </Typography>
 
           <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
-            13. Privacy Commissioner (New Zealand)
-          </Typography>
-          <Typography paragraph>
-            If you believe we have breached your privacy rights, you may contact
-            the Office of the Privacy Commissioner:
+            14. Privacy Commissioner (New Zealand)
           </Typography>
           <Typography paragraph>
             Website: www.privacy.org.nz
             <br />
             Phone: 0800 803 909
+            <br />
+            Email: enquiries@privacy.org.nz
           </Typography>
 
           <Typography variant="body2" color="text.secondary" sx={{ mt: 4 }}>
