@@ -8,58 +8,20 @@ import { useRouter } from "next/navigation";
 import { Icon } from "@iconify/react";
 import Logo from "@/components/Logo";
 import Slogan from "@/components/Slogan";
-import CustomCard from "@/components/CustomCard";
 import { Center } from "@/components/Center";
-import { darkTheme, lightTheme } from "@/styles/theme";
-import { useThemeMode } from "@/hooks/useThemeMode";
+import LandingFeatures from "./LandingFeatures";
 
 const MotionBox = motion(Box);
 
 const LandingHero = () => {
   const router = useRouter();
-  const { mode } = useThemeMode();
-
-  const items = [
-    {
-      icon: "eos-icons:role-binding",
-      title: "List a Position",
-      desc: "Post a classified listing for an available position in your business.",
-      onClick: () => {},
-    },
-    {
-      icon: "mingcute:house-fill",
-      title: "List a Project",
-      desc: "Post a project listing to connect with suitable trades.",
-      onClick: undefined,
-    },
-    {
-      icon: "entypo:v-card",
-      title: "List Trade Skills",
-      desc: "Create a classified profile showcasing your trade skills.",
-      onClick: () => {},
-    },
-    {
-      icon: "ic:baseline-business",
-      title: "List Your Business",
-      desc: "Publish a business listing to be discovered by potential clients.",
-      onClick: undefined,
-    },
-
-    {
-      icon: "icon-park-solid:market-analysis",
-      title: "List Trade Assets",
-      desc: "Advertise equipment, vehicles, and materials as classified listings.",
-
-      onClick: () => {},
-    },
-  ];
 
   const handleExplore = () => {
     router.push("/home");
   };
 
   return (
-    <Container sx={{ py: 4, pt: 20 }}>
+    <Container sx={{ pt: 20 }}>
       <Stack alignItems="center" sx={{ userSelect: "none" }}>
         {/* Extra Small (xs) */}
         <Box display={{ xs: "flex", sm: "none" }}>
@@ -103,8 +65,16 @@ const LandingHero = () => {
           <Slogan fontSize="24px" />
         </Box>
 
-        {/* Large (lg) and Extra Large (xl) */}
-        <Box display={{ xs: "none", sm: "none", md: "none", lg: "flex" }}>
+        {/* Large (lg) */}
+        <Box
+          display={{
+            xs: "none",
+            sm: "none",
+            md: "none",
+            lg: "flex",
+            xl: "none",
+          }}
+        >
           <Logo
             fontSize="75px"
             showCountry={true}
@@ -112,6 +82,25 @@ const LandingHero = () => {
             countryLetterSpacing={10}
           />
         </Box>
+
+        {/* Extra Large (xl) */}
+        <Box
+          display={{
+            xs: "none",
+            sm: "none",
+            md: "none",
+            lg: "none",
+            xl: "flex",
+          }}
+        >
+          <Logo
+            fontSize="100px"
+            showCountry={true}
+            countryFontSize={20}
+            countryLetterSpacing={12}
+          />
+        </Box>
+
         <Box
           display={{ xs: "none", sm: "none", md: "none", lg: "flex" }}
           sx={{ mt: 4 }}
@@ -189,136 +178,7 @@ const LandingHero = () => {
               </Button>
             </Stack>
 
-            <Box sx={{ width: "100%" }}>
-              {/* First 4 cards in 2x2 grid */}
-              <Box
-                display="grid"
-                gridTemplateColumns={{ xs: "1fr", sm: "1fr 1fr" }}
-                gap={4}
-                rowGap={4}
-                sx={{ width: "100%", mb: 4 }}
-              >
-                {items.slice(0, 4).map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      delay: 1 + idx * 0.3,
-                      duration: 0.6,
-                    }}
-                  >
-                    <CustomCard
-                      sx={{
-                        px: 3,
-                        py: 4,
-                        height: "100%",
-                        cursor: item.onClick ? "pointer" : "default",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        userSelect: "none",
-                      }}
-                      onClick={item.onClick}
-                    >
-                      <Stack
-                        spacing={1}
-                        alignItems="center"
-                        sx={{ height: "100%", justifyContent: "center" }}
-                      >
-                        <Box
-                          sx={{
-                            color:
-                              mode === "light"
-                                ? lightTheme.palette.primary.main
-                                : darkTheme.palette.primary.main,
-                          }}
-                        >
-                          <Icon icon={item.icon} height={45} />
-                        </Box>
-                        <Typography
-                          variant="h6"
-                          textAlign="center"
-                          fontWeight="bold"
-                        >
-                          {item.title}
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          textAlign="center"
-                          color="text.secondary"
-                        >
-                          {item.desc}
-                        </Typography>
-                      </Stack>
-                    </CustomCard>
-                  </motion.div>
-                ))}
-              </Box>
-
-              {/* 5th card centered */}
-              <Box
-                display="flex"
-                justifyContent="center"
-                sx={{ width: "100%" }}
-              >
-                <Box sx={{ width: { xs: "100%" } }}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      delay: 1 + 4 * 0.3,
-                      duration: 0.6,
-                    }}
-                  >
-                    <CustomCard
-                      sx={{
-                        px: 3,
-                        py: 4,
-                        height: "100%",
-                        cursor: items[4].onClick ? "pointer" : "default",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        userSelect: "none",
-                      }}
-                      onClick={items[4].onClick}
-                    >
-                      <Stack
-                        spacing={1}
-                        alignItems="center"
-                        sx={{ height: "100%", justifyContent: "center" }}
-                      >
-                        <Box
-                          sx={{
-                            color:
-                              mode === "light"
-                                ? lightTheme.palette.primary.main
-                                : darkTheme.palette.primary.main,
-                          }}
-                        >
-                          <Icon icon={items[4].icon} height={45} />
-                        </Box>
-                        <Typography
-                          variant="h6"
-                          textAlign="center"
-                          fontWeight="bold"
-                        >
-                          {items[4].title}
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          textAlign="center"
-                          color="text.secondary"
-                        >
-                          {items[4].desc}
-                        </Typography>
-                      </Stack>
-                    </CustomCard>
-                  </motion.div>
-                </Box>
-              </Box>
-            </Box>
+            <LandingFeatures />
           </Stack>
         </Center>
       </MotionBox>

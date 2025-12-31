@@ -11,9 +11,9 @@ import PricingSectionClient from "@/components/pricing-section/components/Pricin
 import LandingHero from "./LandingHero";
 import LandingNavigation from "./LandingNavigation";
 import { useThemeMode } from "@/hooks/useThemeMode";
-import LandingClassifiedsSection from "./LandingClassifiedSection";
 import AboutSection from "./AboutSection";
 import ComparisonChart from "./ComparisonChart";
+import ComparisonFeatures from "./Comparison Features";
 
 // Define background images
 const BACKGROUND_IMAGES = ["/site.png", "/site2.png", "/site3.png"];
@@ -102,7 +102,6 @@ export default function LandingSection({ plans }: LandingSectionProps) {
           minHeight: "100vh",
           display: "flex",
           alignItems: "center",
-          mb: 8,
         }}
       >
         {/* Background Image with Gradient Fade */}
@@ -147,29 +146,30 @@ export default function LandingSection({ plans }: LandingSectionProps) {
         </Box>
 
         {/* Hero Content */}
-        <Box sx={{ width: "100%", p: 4 }}>
+        <Box sx={{ width: "100%" }}>
           <LandingHero />
         </Box>
       </Box>
 
       {/* Rest of the page with solid background */}
-      <Box sx={{ position: "relative", zIndex: 1 }}>
-        <Box p={4}>
-          {/* B2B Value Proposition Section */}
-          <B2BValueSection />
+      <Stack sx={{ position: "relative", zIndex: 1, gap: 10 }}>
+        {/* About Section - What We Do/Don't Do */}
+        <AboutSection />
 
-          {/* About Section - What We Do/Don't Do */}
-          <AboutSection />
+        {/* B2B Value Proposition Section */}
+        <B2BValueSection />
 
-          {/* Comparison Chart */}
-          <ComparisonChart />
+        {/* Comparison Chart */}
+        <ComparisonChart />
 
-          {/* Pricing Section */}
-          <Box id="pricing-section">
-            <PricingSectionClient plans={plans} />
-          </Box>
+        {/* Comparison Features */}
+        <ComparisonFeatures />
+
+        {/* Pricing Section */}
+        <Box id="pricing-section">
+          <PricingSectionClient plans={plans} />
         </Box>
-      </Box>
+      </Stack>
 
       {/* Footer */}
       <Box

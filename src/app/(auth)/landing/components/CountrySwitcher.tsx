@@ -1,83 +1,99 @@
 // app/components/CountrySwitcher.tsx
 "use client";
 
-import React from "react";
-import { Box, IconButton, Tooltip } from "@mui/material";
-import Image from "next/image";
-import { useThemeMode } from "@/hooks/useThemeMode";
+import React, { useState, useEffect } from "react";
+import { IconButton, Tooltip, Button } from "@mui/material";
+import { Icon } from "@iconify/react";
 
-const CountrySwitcher: React.FC = () => {
-  const { mode } = useThemeMode();
-  const [currentCountry, setCurrentCountry] = React.useState<"nz" | "au">("nz");
+interface CountrySwitcherProps {
+  variant?: "icon" | "button";
+  onSwitch?: () => void;
+}
 
-  React.useEffect(() => {
+const CountrySwitcher = ({
+  variant = "icon",
+  onSwitch,
+}: CountrySwitcherProps) => {
+  const [currentCountry, setCurrentCountry] = useState<"nz" | "au">("nz");
+
+  useEffect(() => {
     // Detect current site based on hostname
     if (typeof window !== "undefined") {
       const hostname = window.location.hostname;
+
+      // Check for production domains
       if (hostname.includes(".com.au")) {
         setCurrentCountry("au");
+      } else if (hostname.includes(".co.nz")) {
+        setCurrentCountry("nz");
       } else {
+        // Default to NZ for localhost and other domains
         setCurrentCountry("nz");
       }
     }
   }, []);
 
-  const handleSwitch = () => {
-    const newCountry = currentCountry === "nz" ? "au" : "nz";
-    const newUrl =
-      newCountry === "au"
-        ? "https://tradirise.com.au"
-        : "https://tradirise.co.nz";
-    window.location.href = newUrl;
+  const handleCountrySwitch = () => {
+    const hostname = window.location.hostname;
+
+    // If on localhost, just toggle the state for testing
+    if (hostname.includes("localhost") || hostname.includes("127.0.0.1")) {
+      setCurrentCountry(currentCountry === "nz" ? "au" : "nz");
+      // Store this in localStorage to persist the choice
+      localStorage.setItem(
+        "selectedCountry",
+        currentCountry === "nz" ? "au" : "nz"
+      );
+    } else {
+      // Production behavior - redirect to other domain
+      const newCountry = currentCountry === "nz" ? "au" : "nz";
+      const newUrl =
+        newCountry === "au"
+          ? "https://tradirise.com.au"
+          : "https://tradirise.co.nz";
+      window.location.href = newUrl;
+    }
+
+    // Call optional callback
+    if (onSwitch) {
+      onSwitch();
+    }
   };
 
-  const otherCountry = currentCountry === "nz" ? "au" : "nz";
+  // Current country (what user is on)
+  const currentCountryName =
+    currentCountry === "nz" ? "New Zealand" : "Australia";
+  const currentFlagIcon =
+    currentCountry === "nz" ? "circle-flags:nz" : "circle-flags:au";
+
+  // Other country (what they can switch to)
   const otherCountryName =
     currentCountry === "nz" ? "Australia" : "New Zealand";
-  const otherFlagImage = currentCountry === "nz" ? "/au-06.png" : "/nz-06.png";
+
+  if (variant === "button") {
+    return (
+      <Button
+        fullWidth
+        variant="outlined"
+        onClick={handleCountrySwitch}
+        startIcon={<Icon icon={currentFlagIcon} width={24} height={24} />}
+        sx={{
+          justifyContent: "flex-start",
+          py: 1.5,
+          borderRadius: 1,
+          textTransform: "none",
+          fontWeight: 500,
+        }}
+      >
+        {currentCountryName} - Switch to {otherCountryName}
+      </Button>
+    );
+  }
 
   return (
     <Tooltip title={`Switch to ${otherCountryName}`} arrow>
-      <IconButton
-        onClick={handleSwitch}
-        sx={{
-          position: "relative",
-          width: 40,
-          height: 40,
-          padding: 0.5,
-          borderRadius: "50%",
-          border:
-            mode === "light"
-              ? "2px solid rgba(0,0,0,0.1)"
-              : "2px solid rgba(255,255,255,0.2)",
-          transition: "all 0.3s ease",
-          "&:hover": {
-            transform: "scale(1.1)",
-            border:
-              mode === "light"
-                ? "2px solid rgba(0,0,0,0.3)"
-                : "2px solid rgba(255,255,255,0.4)",
-          },
-        }}
-      >
-        <Box
-          sx={{
-            position: "relative",
-            width: "100%",
-            height: "100%",
-            borderRadius: "50%",
-            overflow: "hidden",
-          }}
-        >
-          <Image
-            src={otherFlagImage}
-            alt={`Switch to ${otherCountryName}`}
-            fill
-            style={{
-              objectFit: "cover",
-            }}
-          />
-        </Box>
+      <IconButton onClick={handleCountrySwitch}>
+        <Icon icon={currentFlagIcon} />
       </IconButton>
     </Tooltip>
   );

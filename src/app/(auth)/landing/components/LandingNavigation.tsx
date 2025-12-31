@@ -1,7 +1,7 @@
 // app/components/LandingNavigation.tsx
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Box,
   AppBar,
@@ -16,7 +16,6 @@ import {
   Divider,
   useMediaQuery,
   useTheme,
-  Tooltip,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { Icon } from "@iconify/react";
@@ -25,6 +24,7 @@ import Flex from "@/global/Flex";
 import ThemeToggle from "@/app/(dashboard)/layout/ThemeToggle";
 import { useThemeMode } from "@/hooks/useThemeMode";
 import Center from "@/global/Center";
+import CountrySwitcher from "./CountrySwitcher";
 
 const LandingNavigation = () => {
   const router = useRouter();
@@ -32,24 +32,6 @@ const LandingNavigation = () => {
   const { mode } = useThemeMode();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [currentCountry, setCurrentCountry] = useState<"nz" | "au">("nz");
-
-  useEffect(() => {
-    // Detect current site based on hostname
-    if (typeof window !== "undefined") {
-      const hostname = window.location.hostname;
-
-      // Check for production domains
-      if (hostname.includes(".com.au")) {
-        setCurrentCountry("au");
-      } else if (hostname.includes(".co.nz")) {
-        setCurrentCountry("nz");
-      } else {
-        // Default to NZ for localhost and other domains
-        setCurrentCountry("nz");
-      }
-    }
-  }, []);
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
@@ -87,39 +69,6 @@ const LandingNavigation = () => {
     handleDrawerClose();
     router.push("/home");
   };
-
-  const handleCountrySwitch = () => {
-    handleDrawerClose();
-    const hostname = window.location.hostname;
-
-    // If on localhost, just toggle the state for testing
-    if (hostname.includes("localhost") || hostname.includes("127.0.0.1")) {
-      setCurrentCountry(currentCountry === "nz" ? "au" : "nz");
-      // You could also store this in localStorage to persist the choice
-      localStorage.setItem(
-        "selectedCountry",
-        currentCountry === "nz" ? "au" : "nz"
-      );
-    } else {
-      // Production behavior - redirect to other domain
-      const newCountry = currentCountry === "nz" ? "au" : "nz";
-      const newUrl =
-        newCountry === "au"
-          ? "https://tradirise.com.au"
-          : "https://tradirise.co.nz";
-      window.location.href = newUrl;
-    }
-  };
-
-  // Current country (what user is on)
-  const currentCountryName =
-    currentCountry === "nz" ? "New Zealand" : "Australia";
-  const currentFlagIcon =
-    currentCountry === "nz" ? "circle-flags:nz" : "circle-flags:au";
-
-  // Other country (what they can switch to)
-  const otherCountryName =
-    currentCountry === "nz" ? "Australia" : "New Zealand";
 
   const menuItems = [
     {
@@ -217,32 +166,7 @@ const LandingNavigation = () => {
                 </Button>
 
                 {/* Country Switcher - Desktop */}
-                <Tooltip title={`Switch to ${otherCountryName}`} arrow>
-                  <IconButton
-                    onClick={handleCountrySwitch}
-                    sx={{
-                      position: "relative",
-                      width: 36,
-                      height: 36,
-                      padding: 0.5,
-                      borderRadius: "50%",
-                      border:
-                        mode === "light"
-                          ? "2px solid rgba(0,0,0,0.1)"
-                          : "2px solid rgba(255,255,255,0.2)",
-                      transition: "all 0.3s ease",
-                      "&:hover": {
-                        transform: "scale(1.1)",
-                        border:
-                          mode === "light"
-                            ? "2px solid rgba(0,0,0,0.3)"
-                            : "2px solid rgba(255,255,255,0.4)",
-                      },
-                    }}
-                  >
-                    <Icon icon={currentFlagIcon} width={28} height={28} />
-                  </IconButton>
-                </Tooltip>
+                <CountrySwitcher variant="icon" />
 
                 <ThemeToggle />
               </>
@@ -266,32 +190,7 @@ const LandingNavigation = () => {
                 </Flex>
                 <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
                   {/* Country Switcher - Mobile */}
-                  <Tooltip title={`Switch to ${otherCountryName}`} arrow>
-                    <IconButton
-                      onClick={handleCountrySwitch}
-                      sx={{
-                        position: "relative",
-                        width: 32,
-                        height: 32,
-                        padding: 0.5,
-                        borderRadius: "50%",
-                        border:
-                          mode === "light"
-                            ? "2px solid rgba(0,0,0,0.1)"
-                            : "2px solid rgba(255,255,255,0.2)",
-                        transition: "all 0.3s ease",
-                        "&:hover": {
-                          transform: "scale(1.1)",
-                          border:
-                            mode === "light"
-                              ? "2px solid rgba(0,0,0,0.3)"
-                              : "2px solid rgba(255,255,255,0.4)",
-                        },
-                      }}
-                    >
-                      <Icon icon={currentFlagIcon} width={24} height={24} />
-                    </IconButton>
-                  </Tooltip>
+                  <CountrySwitcher variant="icon" />
                   <ThemeToggle />
                 </Box>
               </Box>
@@ -324,21 +223,7 @@ const LandingNavigation = () => {
 
         {/* Country Switcher in Drawer */}
         <Box sx={{ px: 2, pt: 2, pb: 1 }}>
-          <Button
-            fullWidth
-            variant="outlined"
-            onClick={handleCountrySwitch}
-            startIcon={<Icon icon={currentFlagIcon} width={24} height={24} />}
-            sx={{
-              justifyContent: "flex-start",
-              py: 1.5,
-              borderRadius: 1,
-              textTransform: "none",
-              fontWeight: 500,
-            }}
-          >
-            {currentCountryName} - Switch to {otherCountryName}
-          </Button>
+          <CountrySwitcher variant="button" onSwitch={handleDrawerClose} />
         </Box>
 
         <Divider sx={{ mt: 1 }} />

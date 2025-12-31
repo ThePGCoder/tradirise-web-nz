@@ -36,145 +36,128 @@ const B2BValueSection = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 25 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
-    <Box sx={{ py: { xs: 6, md: 10 }, userSelect: "none" }}>
+    <Box sx={{ userSelect: "none" }}>
       <Container maxWidth="lg">
-        <Stack
-          spacing={2.5}
-          alignItems="center"
-          textAlign="center"
-          sx={{ mb: { xs: 5, md: 7 } }}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
         >
-          <Typography
-            variant="h3"
-            fontWeight={700}
-            sx={{
-              fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem" },
-              userSelect: "none",
-            }}
+          <Stack
+            spacing={2.5}
+            alignItems="center"
+            textAlign="center"
+            sx={{ mb: { xs: 5, md: 7 } }}
           >
-            Built for Real Business
-          </Typography>
-          <Typography
-            variant="h6"
-            color="text.secondary"
-            sx={{
-              maxWidth: 750,
-              fontSize: { xs: "1rem", sm: "1.1rem", md: "1.25rem" },
-              lineHeight: 1.6,
-              userSelect: "none",
-            }}
-          >
-            No middlemen. No exploitation. No pre-charges. Just direct,
-            professional connections that respect your expertise and put you in
-            the driver&#39;s seat.
-          </Typography>
-        </Stack>
+            <Typography
+              variant="h3"
+              fontWeight={700}
+              sx={{
+                fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem" },
+                userSelect: "none",
+              }}
+            >
+              Built for Real Business
+            </Typography>
+            <Typography
+              variant="h6"
+              color="text.secondary"
+              sx={{
+                maxWidth: 750,
+                fontSize: { xs: "1rem", sm: "1.1rem", md: "1.25rem" },
+                lineHeight: 1.6,
+                userSelect: "none",
+              }}
+            >
+              No middlemen. No exploitation. No pre-charges. Just direct,
+              professional connections that respect your expertise and put you
+              in the driver&#39;s seat.
+            </Typography>
+          </Stack>
+        </motion.div>
 
         <Center>
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            style={{ width: "100%" }}
+          <Box
+            display="grid"
+            gridTemplateColumns={{
+              xs: "1fr",
+              sm: "repeat(2, 1fr)",
+            }}
+            gap={{ xs: 3, md: 4 }}
+            sx={{ width: "100%" }}
           >
-            <Box
-              display="grid"
-              gridTemplateColumns={{
-                xs: "1fr",
-                sm: "repeat(2, 1fr)",
-              }}
-              gap={{ xs: 3, md: 4 }}
-              sx={{ width: "100%" }}
-            >
-              {valuePoints.map((item, idx) => (
-                <motion.div key={idx} variants={itemVariants}>
-                  <CustomCard
+            {valuePoints.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ delay: idx * 0.15, duration: 0.5 }}
+              >
+                <CustomCard
+                  sx={{
+                    px: { xs: 2.5, md: 3 },
+                    py: { xs: 3.5, md: 4 },
+                    height: "100%",
+                    cursor: "default",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    userSelect: "none",
+                    transition: "transform 0.3s ease-in-out",
+                    "&:hover": {
+                      transform: "scale(1.03)",
+                    },
+                  }}
+                >
+                  <Stack
+                    spacing={2}
+                    alignItems="center"
                     sx={{
-                      px: { xs: 2.5, md: 3 },
-                      py: { xs: 3.5, md: 4 },
                       height: "100%",
-                      cursor: "default",
-                      display: "flex",
-                      alignItems: "center",
                       justifyContent: "center",
                       userSelect: "none",
-                      transition: "all 0.3s ease",
-                      "&:hover": {
-                        transform: "translateY(-4px)",
-                      },
                     }}
                   >
-                    <Stack
-                      spacing={2}
-                      alignItems="center"
+                    <Box
                       sx={{
-                        height: "100%",
+                        color:
+                          mode === "light"
+                            ? lightTheme.palette.primary.main
+                            : darkTheme.palette.primary.main,
+                        display: "flex",
+                        alignItems: "center",
                         justifyContent: "center",
+                      }}
+                    >
+                      <Icon icon={item.icon} height={48} />
+                    </Box>
+                    <Typography
+                      variant="h6"
+                      textAlign="center"
+                      fontWeight={600}
+                      sx={{ userSelect: "none" }}
+                    >
+                      {item.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      textAlign="center"
+                      color="text.secondary"
+                      sx={{
+                        lineHeight: 1.7,
                         userSelect: "none",
                       }}
                     >
-                      <Box
-                        sx={{
-                          color:
-                            mode === "light"
-                              ? lightTheme.palette.primary.main
-                              : darkTheme.palette.primary.main,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <Icon icon={item.icon} height={48} />
-                      </Box>
-                      <Typography
-                        variant="h6"
-                        textAlign="center"
-                        fontWeight={600}
-                        sx={{ userSelect: "none" }}
-                      >
-                        {item.title}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        textAlign="center"
-                        color="text.secondary"
-                        sx={{
-                          lineHeight: 1.7,
-                          userSelect: "none",
-                        }}
-                      >
-                        {item.desc}
-                      </Typography>
-                    </Stack>
-                  </CustomCard>
-                </motion.div>
-              ))}
-            </Box>
-          </motion.div>
+                      {item.desc}
+                    </Typography>
+                  </Stack>
+                </CustomCard>
+              </motion.div>
+            ))}
+          </Box>
         </Center>
       </Container>
     </Box>
