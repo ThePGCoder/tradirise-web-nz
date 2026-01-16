@@ -15,7 +15,7 @@ import {
 import { Icon } from "@iconify/react";
 import { useThemeMode } from "@/hooks/useThemeMode";
 import { lightTheme, darkTheme } from "@/styles/theme";
-import { useActionState } from "react";
+import { useFormState } from "react-dom"; // ✅ CHANGED THIS
 import { useNotification } from "@/hooks/useNotification";
 import { forgotPasswordAction } from "./actions";
 
@@ -32,13 +32,11 @@ export default function ForgotPasswordForm() {
 
   const [email, setEmail] = useState("");
 
-  const actionState = useActionState<ForgotPasswordState, FormData>(
+  // ✅ FIXED THIS SECTION
+  const [state, formAction] = useFormState<ForgotPasswordState, FormData>(
     forgotPasswordAction,
     {}
   );
-  const state = actionState[0];
-  const formAction = actionState[1];
-  const isPending = actionState[2];
 
   const themedColor =
     mode === "light"
@@ -121,7 +119,7 @@ export default function ForgotPasswordForm() {
                     autoComplete="email"
                     required
                     fullWidth
-                    disabled={isPending}
+                    // ✅ REMOVED disabled={isPending}
                   />
                 </Box>
 
@@ -129,9 +127,9 @@ export default function ForgotPasswordForm() {
                   type="submit"
                   variant="contained"
                   fullWidth
-                  disabled={isPending}
+                  // ✅ REMOVED disabled={isPending}
                 >
-                  {isPending ? "Sending..." : "Send reset email"}
+                  Send reset email
                 </Button>
 
                 <Typography variant="body2" align="center">
