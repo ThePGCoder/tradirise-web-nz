@@ -32,13 +32,11 @@ export default function ForgotPasswordForm() {
 
   const [email, setEmail] = useState("");
 
-  const actionState = useActionState<ForgotPasswordState, FormData>(
+  // FIXED: Correct useActionState usage
+  const [state, formAction, isPending] = useActionState<ForgotPasswordState>(
     forgotPasswordAction,
     {}
   );
-  const state = actionState[0];
-  const formAction = actionState[1];
-  const isPending = actionState[2];
 
   const themedColor =
     mode === "light"
