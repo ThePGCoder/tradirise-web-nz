@@ -16,6 +16,22 @@ const nextConfig: NextConfig = {
       bodySizeLimit: "50mb", // Increase to handle multiple large images
     },
   },
+  transpilePackages: [
+    "@mui/material",
+    "@mui/system",
+    "@mui/x-data-grid",
+    "@mui/x-date-pickers",
+    "@mui/x-date-pickers-pro",
+    "@mui/x-tree-view",
+  ],
+  modularizeImports: {
+    "@mui/material": {
+      transform: "@mui/material/{{member}}",
+    },
+    "@mui/icons-material": {
+      transform: "@mui/icons-material/{{member}}",
+    },
+  },
 };
 
 export default nextConfig;
