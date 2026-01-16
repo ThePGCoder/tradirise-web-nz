@@ -28,16 +28,16 @@ import Flex from "@/global/Flex";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
-import {
-  BusinessEndorsementData,
-  RELATIONSHIP_TYPES,
-  ENDORSEMENT_CATEGORIES,
-} from "../../types/endorsements";
+import { BusinessEndorsementData } from "../../types/endorsements";
 import {
   createRecommendation,
   toggleCategoryEndorsement,
   toggleEndorsement,
 } from "../../actions/endorsements";
+import {
+  ENDORSEMENT_CATEGORIES,
+  RELATIONSHIP_TYPES,
+} from "@/lib/data/reviewData";
 
 dayjs.extend(relativeTime);
 
@@ -79,8 +79,8 @@ export default function EndorsementsSection({
       prev.includes(tag)
         ? prev.filter((t) => t !== tag)
         : prev.length < 3
-        ? [...prev, tag]
-        : prev
+          ? [...prev, tag]
+          : prev
     );
   };
 
