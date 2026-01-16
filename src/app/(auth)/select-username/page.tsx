@@ -3,7 +3,6 @@ import { Box, Paper } from "@mui/material";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import SelectUsernameForm from "./components/SelectUsernameForm";
-import { setUsernameAction } from "./action";
 
 export default async function SelectUsernamePage() {
   const supabase = await createClient();
@@ -45,7 +44,7 @@ export default async function SelectUsernamePage() {
       p={2}
     >
       <Paper elevation={3} sx={{ maxWidth: 400, width: "100%" }}>
-        <SelectUsernameForm setUsernameAction={setUsernameAction} />
+        <SelectUsernameForm />
       </Paper>
     </Box>
   );
