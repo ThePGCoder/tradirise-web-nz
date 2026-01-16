@@ -162,7 +162,7 @@ export default function SelectUsernameForm({
   return (
     <Box component="form" action={handleFormAction} px={3} py={4}>
       <Stack spacing={3} alignItems="center">
-        <Logo fontSize={"32px"} iconHeight={"32px"} />
+        <Logo fontSize={"32px"} />
 
         <Typography variant="h5" textAlign="center" fontWeight={600}>
           Choose Your Username
