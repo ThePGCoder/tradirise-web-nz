@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ toggleDrawer }) => {
           </IconButton>
         </Box>
         <Box display={{ md: "none" }}>
-          <Logo fontSize={""} iconHeight={""} />
+          <Logo fontSize={""} />
         </Box>
         <ThemeToggle />
       </Box>
