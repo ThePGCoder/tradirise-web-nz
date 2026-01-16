@@ -16,7 +16,6 @@ const Testing: React.FC<TestingProps> = () => {
       >
         <Logo
           fontSize={100}
-          iconHeight={100}
           countryFontSize={20}
           countryIconSize={20}
           countryLetterSpacing={10}
