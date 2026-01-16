@@ -6,12 +6,14 @@ import {
   BusinessEndorsementData,
   CategoryEndorsementData,
   RecommendationData,
-  ENDORSEMENT_CATEGORIES,
   CreateRecommendationRequest,
-  RELATIONSHIP_TYPES,
   EndorsementCategory,
   RelationshipType,
 } from "../types/endorsements";
+import {
+  ENDORSEMENT_CATEGORIES,
+  RELATIONSHIP_TYPES,
+} from "@/lib/data/reviewData";
 
 export async function getBusinessEndorsements(
   businessId: string
