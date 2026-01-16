@@ -16,7 +16,7 @@ import {
 import { useEffect, useState } from "react";
 
 import { createClient } from "@/utils/supabase/client";
-import PricingSection from "@/components/pricing-section/components/PricingSection";
+import PricingSection from "@/components/PricingSection";
 
 interface SubscriptionPlans {
   id: string;
