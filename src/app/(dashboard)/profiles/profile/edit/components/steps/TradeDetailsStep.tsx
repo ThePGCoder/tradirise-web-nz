@@ -13,10 +13,11 @@ import {
   MenuItem,
   Chip,
   Autocomplete,
+  ListSubheader,
 } from "@mui/material";
 import { Icon } from "@iconify/react";
 
-import { roles } from "@/lib/data/roles";
+import { groupedRoles } from "@/lib/data/personnelData";
 import { ProfileFormData } from "../../../types/profile-types";
 
 interface TradeDetailsStepProps {
@@ -31,7 +32,11 @@ const TradeDetailsStep: React.FC<TradeDetailsStepProps> = ({
   formData,
   onInputChange,
 }) => {
-  const availableSecondaryRoles = roles.filter(
+  // Flatten all roles from grouped structure
+  const allRoles = groupedRoles.flatMap((group) => group.roles);
+
+  // Get available secondary roles (excluding primary role)
+  const availableSecondaryRoles = allRoles.filter(
     (role) => role !== formData.primary_trade_role
   );
 
@@ -56,11 +61,14 @@ const TradeDetailsStep: React.FC<TradeDetailsStepProps> = ({
                 onInputChange("primary_trade_role", e.target.value)
               }
             >
-              {roles.map((role) => (
-                <MenuItem key={role} value={role}>
-                  {role}
-                </MenuItem>
-              ))}
+              {groupedRoles.map((group) => [
+                <ListSubheader key={group.group}>{group.group}</ListSubheader>,
+                ...group.roles.map((role) => (
+                  <MenuItem key={role} value={role}>
+                    {role}
+                  </MenuItem>
+                )),
+              ])}
             </Select>
           </FormControl>
         </Grid>
@@ -72,6 +80,11 @@ const TradeDetailsStep: React.FC<TradeDetailsStepProps> = ({
             value={formData.secondary_trade_roles}
             onChange={(_, newValue) => {
               onInputChange("secondary_trade_roles", newValue);
+            }}
+            groupBy={(option) => {
+              // Find which group this role belongs to
+              const group = groupedRoles.find((g) => g.roles.includes(option));
+              return group?.group || "Other";
             }}
             renderInput={(params) => (
               <TextField
