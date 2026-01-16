@@ -320,12 +320,6 @@ const HomeClient: React.FC<HomeClientProps> = ({ user, profile }) => {
               md: 46,
               lg: 52,
             }}
-            iconHeight={{
-              xs: 32,
-              sm: 38,
-              md: 46,
-              lg: 52,
-            }}
             countryFontSize={{
               xs: 10,
               sm: 10,
